@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FORYOU student clothing-store concept. Everyday essentials, a lookbook and a helpful size guide.">
+  <title>Home | FORYOU</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  
+  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+    <div class="container px-3 px-sm-2 px-lg-4">
+      <a class="navbar-brand wordmark m-0" href="index.html">FORYOU<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler border-dark px-3 py-2" type="button"
+              data-bs-toggle="collapse" data-bs-target="#main-navigation"
+              aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span><span class="ms-2 small">Menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link px-3 py-2 active fw-semibold" href="index.html" aria-current="page">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="collection.html">Collection</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html">Contact</a></li></ul><div class="nav-tools d-flex flex-wrap align-items-center gap-3 ms-lg-4"><button type="button" class="text-button" id="theme-toggle" aria-pressed="false">Night mode</button><button type="button" class="text-button" id="sound-toggle" aria-pressed="true">Sound on</button><button type="button" class="btn btn-primary nav-subscribe" data-open-popup>Subscribe</button></div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="container home-hero" aria-labelledby="welcome">
+    <div class="hero-copy">
+      <p class="greeting text-secondary mb-2" id="greeting"></p>
+      <h1 id="welcome">Everyday,<br>your way.</h1>
+      <p class="lead">Four easy pieces. A palette that belongs together. A little more room to be you.</p>
+      <a class="btn btn-primary btn-lg" href="collection.html">Explore the collection <span aria-hidden="true">↗</span></a>
+      <div class="palette-control">
+        <span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button type="button" class="text-button" id="change-colour">Change background</button>
+        <span id="colour-name" role="status">Chalk</span>
+      </div>
+    </div>
+    <figure class="hero-visual"><img src="images/studio.png" alt="Two models wearing FORYOU's coordinated chalk and moss outfits" width="1536" height="1024"><figcaption>Chalk, moss, sand &amp; charcoal. Good together.</figcaption></figure>
+  </section>
+  <section class="container essentials-section" aria-labelledby="essentials-title">
+    <div class="section-heading"><h2 id="essentials-title">The everyday wardrobe</h2><a href="collection.html">Explore all pieces</a></div>
+    <div class="product-grid"><article class="product-card">
+      <a href="collection.html#size-guide" class="product-photo" aria-label="Find your size for everyday shirt"><img src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"></a>
+      <div class="product-info"><div><h3>Everyday shirt</h3><p>Chalk</p></div><p class="price">18,900 KZT</p></div>
+      <p>An easy cotton layer with room to move.</p>
+    </article><article class="product-card">
+      <a href="collection.html#size-guide" class="product-photo" aria-label="Find your size for easy knit"><img src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"></a>
+      <div class="product-info"><div><h3>Easy knit</h3><p>Moss</p></div><p class="price">24,900 KZT</p></div>
+      <p>Soft texture. A colour that goes with everything.</p>
+    </article><article class="product-card">
+      <a href="collection.html#size-guide" class="product-photo" aria-label="Find your size for weekend jacket"><img src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"></a>
+      <div class="product-info"><div><h3>Weekend jacket</h3><p>Sand</p></div><p class="price">32,900 KZT</p></div>
+      <p>A light finishing layer for days out.</p>
+    </article><article class="product-card">
+      <a href="collection.html#size-guide" class="product-photo" aria-label="Find your size for straight trousers"><img src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"></a>
+      <div class="product-info"><div><h3>Straight trousers</h3><p>Charcoal</p></div><p class="price">22,900 KZT</p></div>
+      <p>A relaxed shape, from morning to evening.</p>
+    </article></div>
+  </section>
+  <section class="editorial-section">
+    <img src="images/gallery-knitwear.png" alt="Folded knitwear in oatmeal, moss and charcoal" width="1536" height="1024" loading="lazy">
+    <div><h2>Less to choose.<br>More to wear.</h2><p>Chalk with moss. Sand with charcoal. Our four-piece collection starts with colours that work together, so getting dressed feels a little simpler.</p><a class="btn btn-primary" href="about.html">Meet FORYOU</a></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><h2>Keep in touch.</h2><p>A small wardrobe. Plenty of possibility.</p></div>
+      <button type="button" class="btn btn-light" data-open-popup>Subscribe</button>
+    </div>
+    <a class="footer-wordmark" href="index.html" aria-label="FORYOU home">FORYOU.</a>
+    <div class="footer-bottom">
+      <p>Asankhan Shyngys &amp; Shangerey Akerke<br><span>Team FORYOU · SE-2504 · Student concept</span></p>
+      <p>Local date &amp; time<br><time data-clock>Available when JavaScript is enabled</time></p>
+      <a href="media-queries.html">Responsive study</a>
+    </div>
+  </div>
+</footer>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note">
+  <div class="popup-inner">
+    <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
+    <h2 id="subscribe-title">A little FORYOU</h2>
+    <p>New pieces, styling ideas, and colours to come back to.</p>
+    <p id="subscribe-note" class="small">Student demo: your details stay in this browser. No subscription is created.</p>
+    <form id="subscribe-form" novalidate>
+      <label for="subscriber-email">Email address</label>
+      <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
+      <p class="field-error" id="subscriber-email-error"></p>
+      <button type="submit" class="btn btn-primary w-100">Try subscribing</button>
+      <p class="form-status" id="subscribe-status" role="status"></p>
+    </form>
+  </div>
+</dialog>
+<script src="js/site.js" defer></script>
+<script src="js/common.js" defer></script>
+</body>
+</html>
+
+

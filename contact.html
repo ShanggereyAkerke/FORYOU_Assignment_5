@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FORYOU student clothing-store concept. Everyday essentials, a lookbook and a helpful size guide.">
+  <title>Contact | FORYOU</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  
+  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+    <div class="container px-3 px-sm-2 px-lg-4">
+      <a class="navbar-brand wordmark m-0" href="index.html">FORYOU<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler border-dark px-3 py-2" type="button"
+              data-bs-toggle="collapse" data-bs-target="#main-navigation"
+              aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span><span class="ms-2 small">Menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link px-3 py-2" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="collection.html">Collection</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2 active fw-semibold" href="contact.html" aria-current="page">Contact</a></li></ul><div class="nav-tools d-flex flex-wrap align-items-center gap-3 ms-lg-4"><button type="button" class="text-button" id="theme-toggle" aria-pressed="false">Night mode</button><button type="button" class="text-button" id="sound-toggle" aria-pressed="true">Sound on</button><button type="button" class="btn btn-primary nav-subscribe" data-open-popup>Subscribe</button></div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="container contact-main">
+  <header class="page-intro"><h1>A little closer.</h1><p class="lead">Find your fit, get to know the collection, and try the FORYOU circle.</p></header>
+  <div class="contact-grid">
+    <section id="questions" aria-labelledby="questions-title">
+      <img class="contact-image" src="images/contactus.jpg" alt="Sunlit clothing display in the FORYOU store concept" width="2752" height="1536">
+      <h2 id="questions-title">Good to know</h2>
+      <div class="faq-list"><article class="faq-item">
+  <h3><button type="button" class="faq-toggle" id="question-0" aria-expanded="false" aria-controls="answer-0">How do I choose a size?<span aria-hidden="true">+</span></button></h3>
+  <div class="faq-answer" id="answer-0" role="region" aria-labelledby="question-0"><div><p>Measure your chest, waist and hips, then compare them with our <a href="collection.html#size-guide">size guide</a>. The measurements are examples for this student project.</p></div></div>
+</article><article class="faq-item">
+  <h3><button type="button" class="faq-toggle" id="question-1" aria-expanded="false" aria-controls="answer-1">Can I place an order?<span aria-hidden="true">+</span></button></h3>
+  <div class="faq-answer" id="answer-1" role="region" aria-labelledby="question-1"><div><p>FORYOU is a student clothing-store concept. Products and prices illustrate the design; we do not take orders or payments.</p></div></div>
+</article><article class="faq-item">
+  <h3><button type="button" class="faq-toggle" id="question-2" aria-expanded="false" aria-controls="answer-2">What happens to my details?<span aria-hidden="true">+</span></button></h3>
+  <div class="faq-answer" id="answer-2" role="region" aria-labelledby="question-2"><div><p>These forms demonstrate browser-side validation. No account is created, no email is sent, and your password is never saved.</p></div></div>
+</article><article class="faq-item">
+  <h3><button type="button" class="faq-toggle" id="question-3" aria-expanded="false" aria-controls="answer-3">How do I style the collection?<span aria-hidden="true">+</span></button></h3>
+  <div class="faq-answer" id="answer-3" role="region" aria-labelledby="question-3"><div><p>Pair the chalk shirt with charcoal trousers, then add the sand jacket. Swap the shirt for the moss knit for a softer layer.</p></div></div>
+</article></div>
+    </section>
+    <section class="join-panel" aria-labelledby="form-title">
+      <h2 id="form-title">The FORYOU circle</h2>
+      <p>Make a little space for your everyday favourites.</p>
+      <p class="demo-note" id="form-note">Try our registration form. This is a student demo: no account is created and no details are sent or saved. Use a sample password.</p>
+      <form id="join-form" novalidate aria-describedby="form-note">
+        <p class="form-status" id="join-status" role="status"></p>
+        <div class="field"><label for="name">Name</label><input class="form-control" id="name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="name-error"><p class="field-error" id="name-error"></p></div>
+        <div class="field"><label for="email">Email address</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required  aria-describedby="email-error"><p class="field-error" id="email-error"></p></div>
+        <div class="field"><label for="password">Password</label><input class="form-control" id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" aria-describedby="password-error password-help"><p class="field-help" id="password-help">Use 8–128 characters.</p><p class="field-error" id="password-error"></p></div>
+        <div class="field"><label for="confirm-password">Confirm password</label><input class="form-control" id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" aria-describedby="confirm-password-error"><p class="field-error" id="confirm-password-error"></p></div>
+        <div class="check-field"><input type="checkbox" id="understood" name="understood" required aria-describedby="understood-error"><label for="understood">I understand this is a demonstration.</label></div>
+        <p class="field-error" id="understood-error"></p>
+        <div class="form-actions"><button class="btn btn-primary" type="submit">Try registration</button><button class="text-button" type="reset">Clear form</button></div>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><h2>Keep in touch.</h2><p>A small wardrobe. Plenty of possibility.</p></div>
+      <button type="button" class="btn btn-light" data-open-popup>Subscribe</button>
+    </div>
+    <a class="footer-wordmark" href="index.html" aria-label="FORYOU home">FORYOU.</a>
+    <div class="footer-bottom">
+      <p>Asankhan Shyngys &amp; Shangerey Akerke<br><span>Team FORYOU · SE-2504 · Student concept</span></p>
+      <p>Local date &amp; time<br><time data-clock>Available when JavaScript is enabled</time></p>
+      <a href="media-queries.html">Responsive study</a>
+    </div>
+  </div>
+</footer>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note">
+  <div class="popup-inner">
+    <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
+    <h2 id="subscribe-title">A little FORYOU</h2>
+    <p>New pieces, styling ideas, and colours to come back to.</p>
+    <p id="subscribe-note" class="small">Student demo: your details stay in this browser. No subscription is created.</p>
+    <form id="subscribe-form" novalidate>
+      <label for="subscriber-email">Email address</label>
+      <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
+      <p class="field-error" id="subscriber-email-error"></p>
+      <button type="submit" class="btn btn-primary w-100">Try subscribing</button>
+      <p class="form-status" id="subscribe-status" role="status"></p>
+    </form>
+  </div>
+</dialog>
+<script src="js/site.js" defer></script>
+<script src="js/common.js" defer></script>
+</body>
+</html>
+
+

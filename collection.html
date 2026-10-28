@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FORYOU student clothing-store concept. Everyday essentials, a lookbook and a helpful size guide.">
+  <title>Collection | FORYOU</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  
+  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+    <div class="container px-3 px-sm-2 px-lg-4">
+      <a class="navbar-brand wordmark m-0" href="index.html">FORYOU<span class="brand-dot">.</span></a>
+      <button class="navbar-toggler border-dark px-3 py-2" type="button"
+              data-bs-toggle="collapse" data-bs-target="#main-navigation"
+              aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span><span class="ms-2 small">Menu</span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link px-3 py-2" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2 active fw-semibold" href="collection.html" aria-current="page">Collection</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html">Contact</a></li></ul><div class="nav-tools d-flex flex-wrap align-items-center gap-3 ms-lg-4"><button type="button" class="text-button" id="theme-toggle" aria-pressed="false">Night mode</button><button type="button" class="text-button" id="sound-toggle" aria-pressed="true">Sound on</button><button type="button" class="btn btn-primary nav-subscribe" data-open-popup>Subscribe</button></div>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="main" class="flex-grow-1">
+  <div class="container px-3 px-sm-2 px-lg-4 py-4 py-lg-5">
+    <header class="row g-4 align-items-end mb-4">
+      <div class="col-12 col-lg-6"><h1 class="mb-0">Everyday,<br>considered.</h1></div>
+      <div class="col-12 col-lg-6"><p class="text-secondary mb-3">Four coordinated pieces for your everyday wardrobe.</p>
+        
+        <div class="btn-group" role="group" aria-label="Collection sections"><a class="btn gap-1 btn-primary" href="#clothing">The pieces</a><a class="btn gap-1 btn-outline-primary" href="#size-guide">Size guide</a></div>
+      </div>
+    </header>
+    <section id="clothing" class="py-4" aria-labelledby="clothing-title">
+      <h2 id="clothing-title" class="visually-hidden">Our clothing collection</h2>
+      <div class="shop-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <div id="price-filters" class="d-flex flex-wrap gap-2" role="group" aria-label="Filter by price" hidden>
+          <button type="button" class="btn btn-outline-primary btn-sm active" data-range="all" aria-pressed="true" aria-keyshortcuts="1">All pieces</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" data-range="under20" aria-pressed="false" aria-keyshortcuts="2">Under 20,000 KZT</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" data-range="mid" aria-pressed="false" aria-keyshortcuts="3">20,000–30,000 KZT</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" data-range="over30" aria-pressed="false" aria-keyshortcuts="4">Over 30,000 KZT</button>
+        </div>
+        <p id="bag-status" class="fw-semibold mb-0" role="status" hidden>Bag: empty</p>
+      </div>
+      <p id="filter-note" class="text-secondary" role="status" aria-live="polite"></p>
+      <div id="product-row" class="row g-4 g-lg-5"><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+  <img class="card-img-top rounded-0 product-image" src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy">
+  <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
+    
+    <h3 class="card-title h4">Everyday shirt</h3>
+    <p class="card-text text-secondary">An easy cotton layer for a relaxed everyday wardrobe.</p>
+    <p class="fw-semibold mb-3">18,900 KZT</p>
+    <a class="btn gap-1 btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+  <img class="card-img-top rounded-0 product-image" src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy">
+  <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
+    
+    <h3 class="card-title h4">Easy knit</h3>
+    <p class="card-text text-secondary">Soft texture and a muted green that pairs with your favourites.</p>
+    <p class="fw-semibold mb-3">24,900 KZT</p>
+    <a class="btn gap-1 btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+  <img class="card-img-top rounded-0 product-image" src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy">
+  <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
+    
+    <h3 class="card-title h4">Weekend jacket</h3>
+    <p class="card-text text-secondary">A lightweight finishing layer for slow weekends and busy days.</p>
+    <p class="fw-semibold mb-3">32,900 KZT</p>
+    <a class="btn gap-1 btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+  <img class="card-img-top rounded-0 product-image" src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy">
+  <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
+    
+    <h3 class="card-title h4">Straight trousers</h3>
+    <p class="card-text text-secondary">A relaxed straight-leg shape with a simple, versatile finish.</p>
+    <p class="fw-semibold mb-3">22,900 KZT</p>
+    <a class="btn gap-1 btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
+  </div>
+</article></div></div>
+    </section>
+    <section id="size-guide" class="bg-soft p-3 p-md-4 p-lg-5 mt-3 mt-lg-4 mb-3" aria-labelledby="size-title">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-6"><h2 id="size-title" class="mb-3">A little guidance.</h2><p>These example body measurements are in centimetres.</p><ol class="ps-4 mb-4"><li class="mb-2">Measure around the fullest part of your chest.</li><li class="mb-2">Measure your waist and the fullest part of your hips.</li><li>Compare the measurements with the table.</li></ol><a class="btn gap-1 btn-secondary btn-sm" href="contact.html#questions">Read sizing questions</a></div>
+        <div class="col-12 col-lg-6"><div class="table-responsive" tabindex="0" role="region" aria-label="Scrollable clothing size guide">
+          <table id="size-table" class="table table-striped align-middle mb-0"><caption class="caption-top pt-0">Unisex body measurements (cm)</caption><thead><tr><th scope="col">Size</th><th scope="col">Chest</th><th scope="col">Waist</th><th scope="col">Hip</th></tr></thead><tbody>
+          <tr><th scope="row">S</th><td>86–94</td><td>70–78</td><td>88–96</td></tr>
+          <tr><th scope="row">M</th><td>94–102</td><td>78–86</td><td>96–104</td></tr>
+          <tr><th scope="row">L</th><td>102–110</td><td>86–94</td><td>104–112</td></tr>
+          <tr><th scope="row">XL</th><td>110–118</td><td>94–102</td><td>112–120</td></tr>
+          </tbody></table></div></div>
+      </div>
+    </section>
+    <section id="size-finder" class="py-4 py-lg-5" aria-labelledby="finder-title" hidden>
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-6">
+          <h2 id="finder-title" class="mb-3">Find your size.</h2>
+          <p class="text-secondary">Three quick steps. We compare your measurements with the size guide above. Demo only: nothing is saved.</p>
+        </div>
+        <div class="col-12 col-lg-6">
+          <form id="finder-form" class="join-panel" novalidate>
+            <p id="finder-progress" class="small text-secondary" aria-live="polite"></p>
+            <fieldset class="finder-step">
+              <legend class="h4">Your measurements (cm)</legend>
+              <div class="field"><label for="finder-chest">Chest</label><input class="form-control" id="finder-chest" type="number" inputmode="numeric" min="60" max="150" aria-describedby="finder-error"></div>
+              <div class="field"><label for="finder-waist">Waist</label><input class="form-control" id="finder-waist" type="number" inputmode="numeric" min="60" max="150" aria-describedby="finder-error"></div>
+              <div class="field"><label for="finder-hip">Hip</label><input class="form-control" id="finder-hip" type="number" inputmode="numeric" min="60" max="150" aria-describedby="finder-error"></div>
+              <p class="field-error" id="finder-error" role="alert"></p>
+            </fieldset>
+            <fieldset class="finder-step" hidden>
+              <legend class="h4">How should it fit?</legend>
+              <div class="form-check"><input class="form-check-input" type="radio" name="fit" id="fit-fitted" value="fitted"><label class="form-check-label" for="fit-fitted">Fitted</label></div>
+              <div class="form-check"><input class="form-check-input" type="radio" name="fit" id="fit-regular" value="regular" checked><label class="form-check-label" for="fit-regular">Regular</label></div>
+              <div class="form-check"><input class="form-check-input" type="radio" name="fit" id="fit-relaxed" value="relaxed"><label class="form-check-label" for="fit-relaxed">Relaxed</label></div>
+            </fieldset>
+            <fieldset class="finder-step" hidden>
+              <legend class="h4">Your size</legend>
+              <p id="finder-result" role="status"></p>
+            </fieldset>
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline-primary" id="finder-back">Back</button>
+              <button type="button" class="btn btn-primary" id="finder-next">Next</button>
+              <button type="button" class="text-button" id="finder-restart" hidden>Start over</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><h2>Keep in touch.</h2><p>A small wardrobe. Plenty of possibility.</p></div>
+      <button type="button" class="btn btn-light" data-open-popup>Subscribe</button>
+    </div>
+    <a class="footer-wordmark" href="index.html" aria-label="FORYOU home">FORYOU.</a>
+    <div class="footer-bottom">
+      <p>Asankhan Shyngys &amp; Shangerey Akerke<br><span>Team FORYOU · SE-2504 · Student concept</span></p>
+      <p>Local date &amp; time<br><time data-clock>Available when JavaScript is enabled</time></p>
+      <a href="media-queries.html">Responsive study</a>
+    </div>
+  </div>
+</footer>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note">
+  <div class="popup-inner">
+    <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
+    <h2 id="subscribe-title">A little FORYOU</h2>
+    <p>New pieces, styling ideas, and colours to come back to.</p>
+    <p id="subscribe-note" class="small">Student demo: your details stay in this browser. No subscription is created.</p>
+    <form id="subscribe-form" novalidate>
+      <label for="subscriber-email">Email address</label>
+      <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
+      <p class="field-error" id="subscriber-email-error"></p>
+      <button type="submit" class="btn btn-primary w-100">Try subscribing</button>
+      <p class="form-status" id="subscribe-status" role="status"></p>
+    </form>
+  </div>
+</dialog>
+<script src="js/site.js" defer></script>
+<script src="js/common.js" defer></script>
+<script src="js/collection.js" defer></script>
+</body>
+</html>
+
+

@@ -25,14 +25,39 @@ if (joinForm) {
   let submitted = false;
   function validate(input) {
     let message = "";
-    if (input.id === "name" && !input.value.trim()) message = "Enter your name.";
+    if (input.id === "name") {
+  const name = input.value.trim();
+
+  if (!name) {
+    message = "Enter your name.";
+  } else if (name.length > 100) {
+    message = "Use no more than 100 characters.";
+  } else if (!/^\p{L}[\p{L}\p{M}]*(?:[ '’-][\p{L}\p{M}]+)*$/u.test(name)) {
+    message = "Use letters, spaces, hyphens or apostrophes only.";
+  }
+}
+
     if (input.id === "email") message = emailError(input);
-    if (input.id === "password" && (input.value.length < 8 || input.value.length > 128))
-      message = "Use a password with 8–128 characters.";
+
+    if (input.id === "password") {
+      if (/\s/u.test(input.value)) {
+    message = "Password must not contain spaces.";
+  } else if (input.value.length < 8 || input.value.length > 128) {
+    message = "Use a password with 8–128 characters.";
+  }
+}
+
     if (input.id === "confirm-password") {
-      if (!input.value) message = "Confirm your password.";
-      else if (input.value !== password.value) message = "Your passwords do not match.";
-    }
+    if (!input.value) {
+    message = "Confirm your password.";
+  } else if (/\s/u.test(input.value)) {
+    message = "Password must not contain spaces.";
+  } else if (input.value.length < 8 || input.value.length > 128) {
+    message = "Use a password with 8–128 characters.";
+  } else if (input.value !== password.value) {
+    message = "Your passwords do not match.";
+  }
+}
     if (input.id === "understood" && !input.checked)
       message = "Please confirm that this is a demonstration.";
     return showError(input, message);

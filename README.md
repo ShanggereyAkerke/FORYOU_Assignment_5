@@ -76,13 +76,3 @@ The report is explicitly marked DRAFT until genuine webpage screenshots and the 
 7. Open the actual live URL and add it to the report. Do not use an unverified predicted URL.
 8. Export the final report, regenerate the ZIP, and have both members submit separately.
 
-## References
-
-- https://getbootstrap.com/docs/5.3/getting-started/introduction/
-- https://getbootstrap.com/docs/5.3/layout/grid/
-- https://getbootstrap.com/docs/5.3/utilities/spacing/
-- https://getbootstrap.com/docs/5.3/components/navbar/
-- https://getbootstrap.com/docs/5.3/components/carousel/
-- https://getbootstrap.com/docs/5.3/components/card/
-
-Original Assignment 2 pages remain in the parent folder.

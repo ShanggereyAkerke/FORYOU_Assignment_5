@@ -19,11 +19,21 @@
 .foryou-toast { position:fixed; right:24px; bottom:24px; max-width:min(420px,calc(100vw - 48px)); background:var(--ink); color:var(--paper); padding:18px 24px; z-index:2000 }
 .submit-spinner { width:18px; height:18px; border:2px solid currentColor; border-right-color:transparent; border-radius:50%; animation:submit-spin .65s linear infinite }
 @keyframes submit-spin { to { transform:rotate(360deg) } }
-.copy-snippet { padding:20px 0; margin-bottom:24px }
-.copy-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap }
-.copy-actions code { font-size:17px; color:var(--ink); overflow-wrap:anywhere }
-.copy-tooltip { flex-basis:100%; color:var(--success) }
-.copy-actions button:disabled { opacity:1; color:var(--success) }
+.copy-snippet { position:relative; padding:28px 28px 42px; margin:28px 0 32px; background:var(--soft) }
+.copy-snippet h3 { margin:0 0 8px; font:400 30px/1.15 Georgia,serif; letter-spacing:-.03em; color:var(--ink) }
+.copy-snippet > p { margin:0 0 24px; color:var(--muted); font-size:16px }
+.copy-actions { display:flex; gap:20px; align-items:center }
+.share-destination { flex:1; min-width:0; color:var(--ink); text-decoration:none }
+.share-path { display:block; font-size:16px; font-weight:600 }
+.share-path > span { padding:0 8px; color:var(--rose); font-weight:400 }
+.share-domain { display:block; margin-top:4px; font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.share-destination:hover .share-path { text-decoration:underline; text-underline-offset:4px }
+.share-copy { display:inline-flex; flex-shrink:0; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:12px 18px; border:0; background:var(--rose); color:var(--paper); font:inherit; font-size:15px; cursor:pointer; transition:background .2s,transform .2s }
+.share-copy:hover { background:var(--rose-dark); transform:translateY(-2px) }
+.share-copy:active { transform:translateY(1px) }
+.copy-tooltip { position:absolute; bottom:12px; right:28px; font-size:13px; color:var(--success) }
+.copy-actions .share-copy:disabled { opacity:1; background:var(--success); color:var(--paper); cursor:default; transform:none }
+@media(max-width:420px) { .copy-snippet { padding:24px 20px 42px } .copy-snippet h3 { font-size:27px } .copy-actions { flex-wrap:wrap; gap:18px } .share-destination { flex-basis:100% } .share-copy { width:100% } .copy-tooltip { right:20px } }
 img[data-src] { background:var(--soft) }
 .image-error { border:2px solid var(--error) }
 @media(max-width:575px) { .collection-facts { gap:24px } .collection-facts strong { font-size:48px } .search-line { gap:10px } }

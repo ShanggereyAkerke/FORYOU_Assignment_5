@@ -210,7 +210,8 @@ $(document).ready(function () {
       const $toggle = $(this).find(".faq-toggle");
       if (keyword && matches && $toggle.attr("aria-expanded") !== "true") $toggle.trigger("click");
     });
-    $("#faq-search-status").text($(".faq-item").filter(function () { return !this.hidden; }).length + " matching questions.");
+    const count = $(".faq-item").filter(function () { return !this.hidden; }).length;
+    $("#faq-search-status").text(count + (count === 1 ? " matching question." : " matching questions."));
     updateProgress();
   });
 });

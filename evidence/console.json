@@ -1,0 +1,62 @@
+[
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:42:56.512Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:43:05.584Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:43:06.312Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:43:35.586Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:43:44.062Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:43:44.306Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:44:11.424Z",
+    "url": "http://127.0.0.1:5500/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:44:25.228Z",
+    "url": "http://127.0.0.1:5501/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:44:36.647Z",
+    "url": "http://127.0.0.1:5501/script.js"
+  },
+  {
+    "level": "log",
+    "message": "jQuery is ready!",
+    "timestamp": "2026-11-04T05:46:05.676Z",
+    "url": "http://127.0.0.1:5501/script.js"
+  }
+]

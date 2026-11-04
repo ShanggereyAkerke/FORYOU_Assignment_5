@@ -1,50 +1,60 @@
-# FORYOU - Assignment 5 additions (Advanced JavaScript and DOM)
+# FORYOU - Assignment 6: jQuery
 
-New files: `js/common.js` (all four main pages) and `js/collection.js` (Collection page only). `js/site.js` from Assignment 4 is unchanged. Open `index.html` in a browser; no build step.
+Team FORYOU, group SE-2504. Members: Asankhan Shyngys and Shangerey Akerke.
+This continues the same clothing-store project, preserving Assignments 4 and 5.
 
-| Requirement | Where |
-| --- | --- |
-| DOM selection and updates (`querySelector`, `querySelectorAll`, `textContent`, `innerHTML`) | `collection.js` cards, ratings, bag text |
-| Day/Night theme switch (saved in `localStorage`) | navbar button, `common.js` + `[data-bs-theme="dark"]` in `site.css` |
-| Rating stars (`querySelectorAll`, click to colour) | Collection cards |
-| Event listeners on buttons | filters, Add to bag, size finder, theme and sound buttons |
-| Keyboard events | arrow keys / Home / End in the navbar (all pages); keys 1-4 for price filters (Collection) |
-| Callbacks | `showStep(index, callback)` in the size finder (multi-step form) |
-| `switch` statements | price filter, key handling, fit choice, time-of-day greeting on Home |
-| Objects, arrays, loops | `products` array of objects with methods; star loop; size table read into an array |
-| Higher-order functions | `map`, `filter`, `forEach`, `find`, `findIndex`, `reduce` |
-| Sound | Web Audio tones (`sound` in `common.js`), one at a time, with a Sound on/off button |
-| Animation | staggered card entrance, bag pop, star scale, theme colour transition (reduced motion respected) |
+Live website: https://shanggereyakerke.github.io/FORYOU_Assignment_5/
 
-# FORYOU - Assignment 3
+## Run
 
-Open `index.html` in a browser. The website works offline: Bootstrap 5.3.8 CSS, its official JavaScript bundle, and all nine images are included locally. The four main pages use only the official Bootstrap JavaScript bundle for interactive components. There is no custom JavaScript or build step. The independent media-query exercise remains HTML/CSS only.
+Open `index.html`, use VS Code Live Server, or serve this folder with any static HTTP server.
+No build or package installation is needed. For clipboard support, use localhost or HTTPS.
+Every main page requests jQuery 4.0.0 from the required official CDN in its head.
+If the CDN is unavailable, the identical local version in `vendor/` loads instead.
+`script.js` uses `$(document).ready()` and prints `jQuery is ready!`.
+The separate media-query exercise remains a pure HTML/CSS exercise.
 
-## Team and ownership
+## Requirement map
 
-- Team: FORYOU; group: SE-2504.
-- Asankhan Shyngys: `index.html` and `collection.html`; Bootstrap navbar, cards, grid, buttons, size table.
-- Shangerey Akerke: `about.html` and `contact.html`; Bootstrap navbar, grid, cards, Bootstrap lookbook and Bootstrap form.
-- Both members: `media-queries.html`, responsive checks and report review.
-- Both names appear in every page's footer.
-
-## Required tasks
-
-| Task | Implementation | Status |
+| Task | Where to demonstrate | Implementation |
 | --- | --- | --- |
-| 1. Responsive typography | `media-queries.html` / `css/media-queries.css`: explicit heading and paragraph changes at 768px and 992px. | Implemented; visual check pending |
-| 2. Three cards without Bootstrap | Same independent page: 1 column below 768px, 2 columns at 768-991px, 3 columns from 992px. It loads no Bootstrap CSS. | Implemented; visual check pending |
-| 3. Bootstrap grid | Home has two `col-lg-6` columns and three `col-lg-4` columns; every main page has a container, rows and responsive columns. | Implemented |
-| 4. Spacing utilities | Main pages use Bootstrap `m-*`, `p-*`, `g-*` and `gap-*` utilities, including `mt-lg-4`, `mt-lg-5` and `px-sm-2`. `site.css` contains no custom margin or padding declarations. Pure-CSS Tasks 1-2 are the necessary exception. | Implemented |
-| 5. Navbar | Four links on all four main pages, Bootstrap navbar/link/background classes. Mobile `button.navbar-toggler` targets `collapse.navbar-collapse` through Bootstrap data attributes. | Standard Bootstrap Collapse plugin; browser check pending |
-| 6. Buttons | Bootstrap primary, secondary, outline, large, small and disabled styles; Collection has a linked `btn-group`; Contact has a native reset button. | Implemented |
-| 7. Carousel | About has 9 distinct images, nine indicator buttons, Previous/Next buttons, and the standard Bootstrap Carousel plugin. | Standard Bootstrap Carousel plugin; browser check pending |
-| 8. Cards | Home has 3 image/title/description cards in Bootstrap `card-group`. Collection has 4 more cards. | Implemented |
-| 9. Form | Contact has `form-control`, `input-group`, `form-select`, `form-check`, radios, a checkbox and responsive Bootstrap columns. | Implemented; submission deliberately disabled |
-| 10. Accessibility | Semantic landmarks, labelled inputs, image alternatives, semantic buttons, Bootstrap-managed menu state and labelled radio controls, focus styling, reduced-motion support and high-contrast text. | Source checks complete; keyboard/browser audit pending |
+| 0. Setup | Console on any main page | CDN in head, external `script.js`, ready callback and exact log message |
+| 1. Live filter | Collection: type shirt, moss or jacket | jQuery input handler filters rendered product columns by title, description and image alternative text; works with price filters; clear and empty states |
+| 2. Autocomplete | Collection: type sh | Accessible listbox, title suggestions, click selection, Up/Down and Enter, Escape, Tab and blur dismissal |
+| 3. Highlighting | Collection search; Contact: search size | Every matching occurrence in the search content becomes a mark element; FAQ answers open for matching content; clearing restores text |
+| 4. Scroll progress | Scroll any main page | Rose fixed progress track with ink leading marker, scroll/resize/load listeners, clamped 0-100 percentage, ARIA progressbar |
+| 5. Number counter | About: Small by design | Real facts 4 pieces, 9 images, 2 members; jQuery animate, once on entering viewport; reduced-motion alternative |
+| 6. Submit spinner | Subscribe or Contact registration | Validate first, disable button, show spinner and Please wait, 1.4-second simulated operation, restore button; reset/close cancels pending timer |
+| 7. Notifications | Collection: Add to bag; valid form; Copy link | Shared temporary live-region toast with jQuery fadeOut and cancellation of previous timer |
+| 8. Clipboard | Contact: Copy link | Clipboard promise, checkmark, visible Copied to clipboard tooltip and toast; truthful failure message |
+| 9. Lazy loading | Home lower images; About lookbook; Collection cards | jQuery scroll/resize visibility checks assign data-src to src; carousel loads the next selected slide before transition; noscript fallback for static imagery |
+| Deployment | GitHub Pages URL above | Shared repository and existing Pages hosting |
 
-## Bootstrap interaction
+## Source map
 
-The user authorized Bootstrap JavaScript after reviewing the lecture slides. All four main pages now load the official local 5.3.8 bundle. Navbar togglers use `data-bs-toggle="collapse"` with a matching target; the About carousel uses `data-bs-slide-to` and `data-bs-slide` buttons. The old CSS radio controller has been removed.
+- `script.js`: Assignment 6 jQuery behavior with numbered task comments.
+- `css/assignment6.css`: additions matching the existing chalk, ink and rose palette.
+- `js/site.js`: earlier forms, FAQ, popup, palette and clock; valid submits call the new loading helper.
+- `js/common.js`: saved theme/sound, greeting and arrow-key header navigation.
+- `js/collection.js`: product data, price filters, rating, bag and size finder; dispatches jQuery events so search and notifications follow rerenders.
+- `evidence/`: browser screenshots and captured console log; code screenshots accompany the PDF report.
+- `output/pdf/FORYOU_Assignment_6_Report.pdf`: illustrated report with steps, results, reflection and defense notes.
 
-The lookbook stays manual with `data-bs-interval="false"`. Use the nine indicators or Previous/Next buttons. Verify keyboard, swipe and wraparound behavior in a real browser before submission.
+## Verification
+
+Browser checks cover search typing, autocomplete keyboard selection, regex punctuation, no matches,
+price-filter/search interaction, FAQ matches, bag toast, actual clipboard contents, valid and invalid
+form submissions, cancellation, final counter values, carousel lazy loading, 100% scroll progress,
+phone layouts at 390px, and retained arrow navigation. Source syntax and whitespace checks pass.
+The design source linter passes. Its separate CDP visual inspector timed out; screenshots were reviewed
+using the connected browser instead. No backend is claimed: registration, subscription and bag are demos.
+
+## Defense and submission
+
+Explain how input differs from keyup (it also handles paste and mobile input), why search text is
+escaped before regex matching, why highlights use text nodes instead of raw HTML, how autocomplete
+preserves input focus, and how filters cooperate after rerendering. Explain the scroll denominator,
+one-shot counters, timer cancellation, truthful clipboard success, and the hidden-carousel exception.
+
+Both members must submit the project ZIP and PDF report in LMS before its stated deadline and defend
+the work at the practice lesson. Those personal LMS submissions and the oral defense are not automated.

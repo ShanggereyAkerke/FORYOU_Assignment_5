@@ -72,9 +72,13 @@ if (joinForm) {
       fields.find((input) => input.getAttribute("aria-invalid") === "true").focus();
       return;
     }
-    joinForm.reset();
-    status.textContent = "All checks passed. Demo complete — no account was created or details saved.";
-    status.classList.add("success");
+    const complete = () => {
+      joinForm.reset();
+      status.textContent = "All checks passed. Demo complete — no account was created or details saved.";
+      status.classList.add("success");
+    };
+    if (window.ForYouUX) window.ForYouUX.submit(joinForm, complete);
+    else complete();
   });
   fields.forEach((input) => input.addEventListener("input", () => {
     status.textContent = "";
@@ -133,9 +137,13 @@ if (dialog) {
     event.preventDefault();
     status.textContent = "";
     if (!showError(email, emailError(email))) { email.focus(); return; }
-    status.textContent = "Email validated. Demo complete — no subscription was created.";
-    status.classList.add("success");
-    form.reset();
+    const complete = () => {
+      form.reset();
+      status.textContent = "Email validated. Demo complete — no subscription was created.";
+      status.classList.add("success");
+    };
+    if (window.ForYouUX) window.ForYouUX.submit(form, complete);
+    else complete();
   });
   email.addEventListener("input", () => {
     status.textContent = "";

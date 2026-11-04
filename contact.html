@@ -7,6 +7,12 @@
   <title>Contact | FORYOU</title>
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/assignment6.css">
+  <!-- Assignment 6 Task 0: required CDN, with the same version locally for offline use. -->
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');</script>
+  <script src="script.js" defer></script>
+  <noscript><style>img[data-src] { display:none }</style></noscript>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -37,6 +43,8 @@
     <section id="questions" aria-labelledby="questions-title">
       <img class="contact-image" src="images/contactus.jpg" alt="Sunlit clothing display in the FORYOU store concept" width="2752" height="1536">
       <h2 id="questions-title">Good to know</h2>
+      <div class="search-panel"><label for="faq-search">Search questions and answers</label><input class="form-control" id="faq-search" type="search" placeholder="Try size or details" aria-describedby="faq-search-status"><p id="faq-search-status" role="status" class="small mt-2"></p></div>
+      <div class="copy-snippet"><h3>Share our collection</h3><div class="copy-actions"><code id="collection-address">https://shanggereyakerke.github.io/FORYOU_Assignment_5/collection.html</code><button class="text-button" type="button" data-copy-target="#collection-address" aria-describedby="copy-address-tip"><span aria-hidden="true">⧉</span> Copy link</button><span id="copy-address-tip" class="copy-tooltip" role="tooltip" hidden></span></div></div>
       <div class="faq-list"><article class="faq-item">
   <h3><button type="button" class="faq-toggle" id="question-0" aria-expanded="false" aria-controls="answer-0">How do I choose a size?<span aria-hidden="true">+</span></button></h3>
   <div class="faq-answer" id="answer-0" role="region" aria-labelledby="question-0"><div><p>Measure your chest, waist and hips, then compare them with our <a href="collection.html#size-guide">size guide</a>. The measurements are examples for this student project.</p></div></div>

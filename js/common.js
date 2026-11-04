@@ -87,21 +87,28 @@
     if (event.target.closest("[data-open-popup]")) sound.play(520);
   });
 
-  /* ---------- Keyboard: arrow keys move focus between menu links ---------- */
-  const menu = document.querySelector(".navbar-nav");
+  /* ---------- Keyboard: arrows move through visible navigation controls ---------- */
+  const menu = document.querySelector(".navbar");
   if (menu) {
-    const links = Array.from(menu.querySelectorAll(".nav-link"));
-    menu.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", (event) => {
+      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+      // Leave text editing, dialogs and other page widgets their own keys.
+      const active = document.activeElement;
+      const onPage = active === document.body || active === document.documentElement;
+      if (!onPage && !menu.contains(active)) return;
+      if (document.querySelector("dialog[open]")) return;
+      const links = Array.from(menu.querySelectorAll(".nav-link, .nav-tools button"))
+        .filter((link) => !link.disabled && link.getClientRects().length > 0);
+      if (!links.length) return;
       const position = links.indexOf(document.activeElement);
-      if (position === -1) return;
       let target = null;
       switch (event.key) {
         case "ArrowRight":
-        case "ArrowDown": target = links[(position + 1) % links.length]; break;
+        case "ArrowDown": target = links[position === -1 ? 0 : (position + 1) % links.length]; break;
         case "ArrowLeft":
-        case "ArrowUp":   target = links[(position - 1 + links.length) % links.length]; break;
-        case "Home":      target = links[0]; break;
-        case "End":       target = links[links.length - 1]; break;
+        case "ArrowUp":   target = links[position === -1 ? links.length - 1 : (position - 1 + links.length) % links.length]; break;
+        case "Home":      if (!onPage) target = links[0]; break;
+        case "End":       if (!onPage) target = links[links.length - 1]; break;
       }
       if (target) { event.preventDefault(); target.focus(); }
     });

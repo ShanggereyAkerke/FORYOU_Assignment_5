@@ -7,6 +7,12 @@
   <title>Collection | FORYOU</title>
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/assignment6.css">
+  <!-- Assignment 6 Task 0: required CDN, with the same version locally for offline use. -->
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');</script>
+  <script src="script.js" defer></script>
+  <noscript><style>img[data-src] { display:none }</style></noscript>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -41,6 +47,14 @@
     </header>
     <section id="clothing" class="py-4" aria-labelledby="clothing-title">
       <h2 id="clothing-title" class="visually-hidden">Our clothing collection</h2>
+      <div class="search-panel">
+        <label for="product-search">Find your everyday piece</label>
+        <div class="search-line"><div class="search-input-wrap">
+          <input id="product-search" class="form-control" type="search" placeholder="Try shirt, knit or jacket" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" aria-describedby="search-status" autocomplete="off">
+          <ul id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Product suggestions" hidden></ul>
+        </div><button id="clear-search" class="text-button" type="button">Clear search</button></div>
+        <p id="search-status" class="small mt-2 mb-0" role="status"></p>
+      </div>
       <div class="shop-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
         <div id="price-filters" class="d-flex flex-wrap gap-2" role="group" aria-label="Filter by price" hidden>
           <button type="button" class="btn btn-outline-primary btn-sm active" data-range="all" aria-pressed="true" aria-keyshortcuts="1">All pieces</button>
@@ -51,8 +65,9 @@
         <p id="bag-status" class="fw-semibold mb-0" role="status" hidden>Bag: empty</p>
       </div>
       <p id="filter-note" class="text-secondary" role="status" aria-live="polite"></p>
+      <p id="search-empty" class="search-empty" hidden>No pieces match. Try another word or choose All pieces.</p>
       <div id="product-row" class="row g-4 g-lg-5"><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-  <img class="card-img-top rounded-0 product-image" src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy">
+  <img class="card-img-top rounded-0 product-image" data-src="images/shirt.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"></noscript>
   <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
     
     <h3 class="card-title h4">Everyday shirt</h3>
@@ -62,7 +77,7 @@
   </div>
 </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-  <img class="card-img-top rounded-0 product-image" src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy">
+  <img class="card-img-top rounded-0 product-image" data-src="images/knit.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"></noscript>
   <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
     
     <h3 class="card-title h4">Easy knit</h3>
@@ -72,7 +87,7 @@
   </div>
 </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-  <img class="card-img-top rounded-0 product-image" src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy">
+  <img class="card-img-top rounded-0 product-image" data-src="images/jacket.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"></noscript>
   <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
     
     <h3 class="card-title h4">Weekend jacket</h3>
@@ -82,7 +97,7 @@
   </div>
 </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-  <img class="card-img-top rounded-0 product-image" src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy">
+  <img class="card-img-top rounded-0 product-image" data-src="images/trousers.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"></noscript>
   <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
     
     <h3 class="card-title h4">Straight trousers</h3>

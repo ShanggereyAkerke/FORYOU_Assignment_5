@@ -1,0 +1,30 @@
+/* Assignment 6 additions follow FORYOU's chalk, ink and rose palette. */
+.reading-progress { position:fixed; inset:0 0 auto; height:5px; z-index:1100; background:var(--soft); pointer-events:none }
+.reading-progress span { display:block; height:100%; width:0; background:var(--rose); border-right:12px solid var(--ink) }
+.search-panel { max-width:650px; margin:12px 0 32px }
+.search-panel label { display:block; font-weight:600; margin-bottom:8px }
+.search-line { display:flex; gap:16px; align-items:center }
+.search-input-wrap { position:relative; flex:1; min-width:0 }
+.search-suggestions { position:absolute; inset:100% 0 auto; z-index:20; list-style:none; margin:4px 0 0; padding:8px; background:var(--paper); border:1px solid var(--rose) } /* taste-skill-ignore: distinguish an overlapping interactive dropdown */
+.search-suggestions li { padding:12px; cursor:pointer }
+.search-suggestions li:hover,.search-suggestions [aria-selected="true"] { background:var(--soft); color:var(--ink) }
+.search-match { background:#f4d782; color:#34282a; padding:0 2px }
+.faq-toggle { display:block }
+.faq-toggle > span[aria-hidden] { float:right }
+.search-empty { padding:24px; background:var(--soft) }
+.collection-facts { display:flex; gap:48px; flex-wrap:wrap; padding:32px 0 48px }
+.collection-facts p { margin:0; min-width:120px }
+.collection-facts strong { display:block; font:400 64px/1.1 Georgia,serif; letter-spacing:-.04em; color:var(--rose) }
+.collection-facts span { display:block; margin-top:8px }
+.foryou-toast { position:fixed; right:24px; bottom:24px; max-width:min(420px,calc(100vw - 48px)); background:var(--ink); color:var(--paper); padding:18px 24px; z-index:2000 }
+.submit-spinner { width:18px; height:18px; border:2px solid currentColor; border-right-color:transparent; border-radius:50%; animation:submit-spin .65s linear infinite }
+@keyframes submit-spin { to { transform:rotate(360deg) } }
+.copy-snippet { padding:20px 0; margin-bottom:24px }
+.copy-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap }
+.copy-actions code { font-size:17px; color:var(--ink); overflow-wrap:anywhere }
+.copy-tooltip { flex-basis:100%; color:var(--success) }
+.copy-actions button:disabled { opacity:1; color:var(--success) }
+img[data-src] { background:var(--soft) }
+.image-error { border:2px solid var(--error) }
+@media(max-width:575px) { .collection-facts { gap:24px } .collection-facts strong { font-size:48px } .search-line { gap:10px } }
+@media(prefers-reduced-motion:reduce) { .submit-spinner { animation:none } }

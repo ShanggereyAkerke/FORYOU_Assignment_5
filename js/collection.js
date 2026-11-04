@@ -62,7 +62,7 @@
 
   function cardHTML(product) {
     return '<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0" data-id="' + product.id + '">' +
-      '<img class="card-img-top rounded-0 product-image" src="images/' + product.image + '" alt="' + product.alt + '" width="1254" height="1254" loading="lazy">' +
+      '<img class="card-img-top rounded-0 product-image" data-src="images/' + product.image + '" alt="' + product.alt + '" width="1254" height="1254" loading="lazy">' +
       '<div class="card-body d-flex flex-column px-0 pt-3 pb-0">' +
       '<h3 class="card-title h4">' + product.name + '</h3>' +
       '<p class="card-text text-secondary">' + product.text + '</p>' +
@@ -91,6 +91,7 @@
       paintStars(card, products[Number(card.dataset.id)].rating);   // ratings survive re-rendering
     });
     filterNote.textContent = describeRange(range, visible.length);
+    if (window.jQuery) window.jQuery(document).trigger("foryou:products");
   }
 
   function applyFilter(range) {
@@ -144,6 +145,7 @@
     if (event.target.closest("[data-add]")) {
       bag.push(product.id);
       updateBag();
+      if (window.jQuery) window.jQuery(document).trigger("foryou:bag", [product.name]);
       sound.play(660, 0.18);
     }
   });

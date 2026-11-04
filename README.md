@@ -37,7 +37,7 @@ The separate media-query exercise remains a pure HTML/CSS exercise.
 - `js/site.js`: earlier forms, FAQ, popup, palette and clock; valid submits call the new loading helper.
 - `js/common.js`: saved theme/sound, greeting and arrow-key header navigation.
 - `js/collection.js`: product data, price filters, rating, bag and size finder; dispatches jQuery events so search and notifications follow rerenders.
-- `evidence/`: browser screenshots and captured console log; code screenshots accompany the PDF report.
+- `evidence/`: website screenshots and captured console log; the report and submission ZIP use website screenshots only.
 - `output/pdf/FORYOU_Assignment_6_Report.pdf`: illustrated report with steps, results, reflection and defense notes.
 
 ## Verification

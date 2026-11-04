@@ -38,7 +38,7 @@ The separate media-query exercise remains a pure HTML/CSS exercise.
 - `js/common.js`: saved theme/sound, greeting and arrow-key header navigation.
 - `js/collection.js`: product data, price filters, rating, bag and size finder; dispatches jQuery events so search and notifications follow rerenders.
 - `evidence/`: website screenshots and captured console log; the report and submission ZIP use website screenshots only.
-- `output/pdf/FORYOU_Assignment_6_Report.pdf`: illustrated report with steps, results, reflection and defense notes.
+- `output/pdf/FORYOU_Assignment_6_Report.pdf`: illustrated report with steps, results and reflection.
 
 ## Verification
 

@@ -6,15 +6,105 @@
 
   /* ================= 1. DATA: an array of objects with methods ================= */
   const products = [
-    { name: "Everyday shirt",    price: 18900, image: "shirt.png",    alt: "Everyday shirt in chalk",
-      text: "An easy cotton layer for a relaxed everyday wardrobe." },
-    { name: "Easy knit",         price: 24900, image: "knit.png",     alt: "Easy knit in moss",
-      text: "Soft texture and a muted green that pairs with your favourites." },
-    { name: "Weekend jacket",    price: 32900, image: "jacket.png",   alt: "Weekend jacket in sand",
-      text: "A lightweight finishing layer for slow weekends and busy days." },
-    { name: "Straight trousers", price: 22900, image: "trousers.png", alt: "Straight trousers in charcoal",
-      text: "A relaxed straight-leg shape with a simple, versatile finish." }
-  ].map((item, index) => Object.assign(item, {
+  {
+    "name": "Everyday shirt",
+    "price": 18900,
+    "image": "shirt.png",
+    "alt": "Everyday shirt in chalk",
+    "text": "An easy cotton layer for a relaxed everyday wardrobe."
+  },
+  {
+    "name": "Easy knit",
+    "price": 24900,
+    "image": "knit.png",
+    "alt": "Easy knit in moss",
+    "text": "Soft texture and a muted green that pairs with your favourites."
+  },
+  {
+    "name": "Weekend jacket",
+    "price": 32900,
+    "image": "jacket.png",
+    "alt": "Weekend jacket in sand",
+    "text": "A lightweight finishing layer for slow weekends and busy days."
+  },
+  {
+    "name": "Straight trousers",
+    "price": 22900,
+    "image": "trousers.png",
+    "alt": "Straight trousers in charcoal",
+    "text": "A relaxed straight-leg shape with a simple, versatile finish."
+  },
+  {
+    "name": "Essential tee",
+    "price": 9900,
+    "image": "essential-tee.png",
+    "alt": "Cream cotton crew-neck T-shirt",
+    "text": "A substantial cotton tee in cream, made for everyday layering."
+  },
+  {
+    "name": "Breezy linen shirt",
+    "price": 23900,
+    "image": "linen-shirt.png",
+    "alt": "Sand linen button-up shirt with an open collar",
+    "text": "Airy linen in sand with an open collar and an easy, relaxed shape."
+  },
+  {
+    "name": "Ribbed tank",
+    "price": 8900,
+    "image": "ribbed-tank.png",
+    "alt": "Chalk white ribbed cotton tank top",
+    "text": "Fine cotton ribbing and a clean neckline, worn solo or under a shirt."
+  },
+  {
+    "name": "Relaxed hoodie",
+    "price": 27900,
+    "image": "relaxed-hoodie.png",
+    "alt": "Sage green cotton hoodie with a kangaroo pocket",
+    "text": "A roomy sage hoodie with a generous pocket for off-duty days."
+  },
+  {
+    "name": "Cotton sweatshirt",
+    "price": 21900,
+    "image": "cotton-sweatshirt.png",
+    "alt": "Charcoal cotton crew-neck sweatshirt",
+    "text": "Brushed cotton in charcoal, finished with soft ribbed cuffs."
+  },
+  {
+    "name": "Soft cardigan",
+    "price": 29900,
+    "image": "soft-cardigan.png",
+    "alt": "Oatmeal knit cardigan with a V neckline and buttons",
+    "text": "An oatmeal knit with tonal buttons and a little room to layer."
+  },
+  {
+    "name": "Wide-leg jeans",
+    "price": 28900,
+    "image": "wide-leg-jeans.png",
+    "alt": "Washed mid-blue wide-leg denim jeans",
+    "text": "Washed blue denim with a high waist and a relaxed, wide-leg cut."
+  },
+  {
+    "name": "Linen shorts",
+    "price": 14900,
+    "image": "linen-shorts.png",
+    "alt": "Sand beige pleated linen shorts",
+    "text": "Light linen shorts in sand, with front pleats and useful side pockets."
+  },
+  {
+    "name": "Everyday overshirt",
+    "price": 31900,
+    "image": "everyday-overshirt.png",
+    "alt": "Olive cotton twill overshirt with two chest pockets",
+    "text": "Olive cotton twill and two patch pockets for an easy extra layer."
+  },
+  {
+    "name": "City coat",
+    "price": 54900,
+    "image": "city-coat.png",
+    "alt": "Camel wool coat with notch lapels",
+    "text": "A warm camel coat with clean lapels and a timeless, tailored shape."
+  }
+].map((item, index) => Object.assign(item, {
     id: index,
     rating: 0,
     priceLabel() { return this.price.toLocaleString("en-US") + " KZT"; },   // object method

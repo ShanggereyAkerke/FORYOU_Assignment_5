@@ -2,6 +2,8 @@
 
 Team FORYOU, group SE-2504. Members: Asankhan Shyngys and Shangerey Akerke.
 This continues the same clothing-store project, preserving Assignments 4 and 5.
+The final-project collection contains 14 distinct garments with local product photos, descriptions and prices.
+New image prompts and provenance are recorded in `images/GENERATED_ASSETS.md`.
 
 Live website: https://shanggereyakerke.github.io/FORYOU_Assignment_5/
 
@@ -23,7 +25,7 @@ The separate media-query exercise remains a pure HTML/CSS exercise.
 | 2. Autocomplete | Collection: type sh | Accessible listbox, title suggestions, click selection, Up/Down and Enter, Escape, Tab and blur dismissal |
 | 3. Highlighting | Collection search; Contact: search size | Every matching occurrence in the search content becomes a mark element; FAQ answers open for matching content; clearing restores text |
 | 4. Scroll progress | Scroll any main page | Rose fixed progress track with ink leading marker, scroll/resize/load listeners, clamped 0-100 percentage, ARIA progressbar |
-| 5. Number counter | About: Small by design | Real facts 4 pieces, 9 images, 2 members; jQuery animate, once on entering viewport; reduced-motion alternative |
+| 5. Number counter | About: Small by design | Real facts 14 pieces, 9 images, 2 members; jQuery animate, once on entering viewport; reduced-motion alternative |
 | 6. Submit spinner | Subscribe or Contact registration | Validate first, disable button, show spinner and Please wait, 1.4-second simulated operation, restore button; reset/close cancels pending timer |
 | 7. Notifications | Collection: Add to bag; valid form; Copy link | Shared temporary live-region toast with jQuery fadeOut and cancellation of previous timer |
 | 8. Clipboard | Contact: Copy link | Clipboard promise, checkmark, visible Copied to clipboard tooltip and toast; truthful failure message |

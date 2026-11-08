@@ -187,6 +187,7 @@ $(document).ready(function () {
       selection = event.key === "ArrowDown" ? (selection + 1) % $options.length : (selection < 0 ? $options.length - 1 : (selection - 1 + $options.length) % $options.length);
       $options.attr("aria-selected", "false").eq(selection).attr("aria-selected", "true");
       $search.attr("aria-activedescendant", $options.eq(selection).attr("id"));
+      $options.eq(selection).get(0).scrollIntoView({ block: "nearest" });
     } else if (event.key === "Enter" && selection >= 0) {
       event.preventDefault();
       $search.val($options.eq(selection).text());

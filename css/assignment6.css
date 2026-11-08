@@ -8,6 +8,7 @@
 .search-suggestions { position:absolute; inset:100% 0 auto; z-index:20; list-style:none; margin:4px 0 0; padding:8px; background:var(--paper); border:1px solid var(--rose) } /* taste-skill-ignore: distinguish an overlapping interactive dropdown */
 .search-suggestions li { padding:12px; cursor:pointer }
 .search-suggestions li:hover,.search-suggestions [aria-selected="true"] { background:var(--soft); color:var(--ink) }
+.search-suggestions { max-height:280px; overflow-y:auto }
 .search-match { background:#f4d782; color:#34282a; padding:0 2px }
 .faq-toggle { display:block }
 .faq-toggle > span[aria-hidden] { float:right }

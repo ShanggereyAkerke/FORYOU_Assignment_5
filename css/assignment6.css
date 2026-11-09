@@ -1,6 +1,4 @@
 /* Assignment 6 additions follow FORYOU's chalk, ink and rose palette. */
-.reading-progress { position:fixed; inset:0 0 auto; height:5px; z-index:1100; background:var(--soft); pointer-events:none }
-.reading-progress span { display:block; height:100%; width:0; background:var(--rose); border-right:12px solid var(--ink) }
 .search-panel { max-width:650px; margin:12px 0 32px }
 .search-panel label { display:block; font-weight:600; margin-bottom:8px }
 .search-line { display:flex; gap:16px; align-items:center }

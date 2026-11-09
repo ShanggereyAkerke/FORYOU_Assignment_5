@@ -16,3 +16,9 @@ Shared prompt direction: one square photorealistic e-commerce product photograph
 | linen-shorts.png | Sand beige tailored linen shorts, pleated front, side pockets and knee-length relaxed fit. |
 | everyday-overshirt.png | Muted olive cotton twill overshirt, two chest patch pockets, button front and long sleeves. |
 | city-coat.png | Camel brown single-breasted wool coat, notch lapels, three buttons and knee-length tailored shape. |
+
+
+## everyday-layers-banner.png
+Generated with the built-in imagegen tool for the homepage campaign section.
+
+Prompt: Use case: photorealistic-natural. Asset type: wide fashion website banner, landscape 2:1 composition. Create an original editorial fashion photograph for FORYOU everyday clothing brand. Two young adult models in relaxed layered basics: one in an oatmeal knit cardigan over white tee with charcoal straight trousers, one in olive overshirt with cream trousers, walking casually beside a textured pale concrete campus building with broad steps and a subtle tree shadow. Quiet contemporary architecture, soft overcast daylight, realistic woven cotton and knit texture, natural candid poses. Wide environmental composition with both people near the center so mobile cropping works. Restrained white, charcoal, oatmeal and muted olive clothing. This replaces a knitwear/overshirt story section with a single immersive photograph. No text, logos, typography, watermark, sale graphics or collage. Original imagery, no Uniqlo assets or branding.

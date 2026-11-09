@@ -48,16 +48,6 @@ $(document).ready(function () {
   window.ForYouUX = { notify, submit };
   $(document).on("foryou:bag", function (event, name) { notify(name + " added to your bag."); });
 
-  // Task 4: scrollable distance, not the entire document height; clamp both ends.
-  const $progress = $('<div class="reading-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>').prependTo("body");
-  function updateProgress() {
-    const distance = Math.max(0, $(document).height() - $(window).height());
-    const percent = distance ? Math.min(100, Math.max(0, $(window).scrollTop() / distance * 100)) : 100;
-    $progress.attr("aria-valuenow", Math.round(percent)).find("span").css("width", percent + "%");
-  }
-  $(window).on("scroll.assignment6 resize.assignment6 load.assignment6", updateProgress);
-  updateProgress();
-
   // Task 5: animate real project facts once, as each number enters the viewport.
   function animateCounter(element) {
     const $element = $(element);
@@ -84,7 +74,7 @@ $(document).ready(function () {
     const $image = $(image);
     const source = $image.attr("data-src");
     if (!source) return;
-    $image.one("load", function () { $(this).addClass("is-loaded"); updateProgress(); })
+    $image.one("load", function () { $(this).addClass("is-loaded"); })
       .one("error", function () { $(this).addClass("image-error"); });
     $image.attr("src", source).removeAttr("data-src");
   }
@@ -175,7 +165,7 @@ $(document).ready(function () {
       $search.attr("aria-expanded", String(open));
     }
     checkImages();
-    updateProgress();
+
   }
   $search.on("input", function () { filterProducts(true); });
   $search.on("keydown", function (event) {
@@ -217,6 +207,6 @@ $(document).ready(function () {
     });
     const count = $(".faq-item").filter(function () { return !this.hidden; }).length;
     $("#faq-search-status").text(count + (count === 1 ? " matching question." : " matching questions."));
-    updateProgress();
+
   });
 });

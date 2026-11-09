@@ -19,6 +19,7 @@
   if (!row || !filterBar) return;
 
   const cart = window.ForYouCart;
+  let selectedCategory = "";
 
   filterBar.hidden = false;          // controls appear only when JavaScript works
   bagStatus.hidden = false;
@@ -76,7 +77,7 @@
   }
 
   function renderProducts(range) {
-    const visible = products.filter((product) => matchesRange(product, range));   // filter
+    const visible = products.filter((product) => matchesRange(product, range) && (!selectedCategory || product.category === selectedCategory));   // filter
     row.innerHTML = visible.map(cardHTML).join("");                               // map
     row.querySelectorAll(".product-card").forEach((card, index) => {
       card.style.animationDelay = index * 80 + "ms";                // staggered entrance (CSS animation "enter")
@@ -94,6 +95,12 @@
     });
     renderProducts(range);
   }
+
+  $(document).on("foryou:category", function (event, category) {
+    selectedCategory = category;
+    const active = filterBar.querySelector('[aria-pressed="true"]');
+    applyFilter(active ? active.dataset.range : "all");
+  });
 
   filterBar.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-range]");

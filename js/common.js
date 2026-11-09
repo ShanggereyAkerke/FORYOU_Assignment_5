@@ -15,31 +15,24 @@
     }
   };
 
-  /* ---------- Sound: one shared AudioContext, one tone at a time (tones never overlap) ---------- */
+  /* ---------- Shared Wooden touch chime; repeated clicks restart it ---------- */
   const sound = {
     enabled: prefs.read().sound !== false,
-    ctx: null,
-    current: null,
-    play(frequency, duration = 0.12) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (!this.enabled || !AudioCtx) return;
-      this.ctx = this.ctx || new AudioCtx();
-      if (this.current) {
-        try { this.current.stop(); } catch (error) { /* already stopped */ }
+    audio: null,
+    stop() {
+      if (!this.audio) return;
+      this.audio.pause();
+      this.audio.currentTime = 0;
+    },
+    play() {
+      if (!this.enabled) return;
+      if (!this.audio) {
+        this.audio = new Audio("audio/wooden-touch.wav");
+        this.audio.volume = 0.55;
       }
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      const now = this.ctx.currentTime;
-      osc.type = "sine";
-      osc.frequency.value = frequency;
-      gain.gain.setValueAtTime(0.12, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-      osc.start(now);
-      osc.stop(now + duration);
-      this.current = osc;
-      osc.onended = () => { if (this.current === osc) this.current = null; };
+      this.stop();
+      const playback = this.audio.play();
+      if (playback) playback.catch(() => { /* Audio may be blocked by the browser. */ });
     }
   };
   window.ForYou = { sound, prefs };          // shared with js/collection.js
@@ -57,6 +50,7 @@
     showSoundState();
     soundButton.addEventListener("click", () => {
       sound.enabled = !sound.enabled;
+      if (!sound.enabled) sound.stop();
       prefs.save({ sound: sound.enabled });
       showSoundState();
       sound.play(600);

@@ -3,57 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FORYOU student clothing-store concept. Everyday essentials, a lookbook and a helpful size guide.">
+  <meta name="description" content="FORYOU everyday clothing. Explore coordinated essentials, outfit inspiration and your size guide.">
   <title>Collection | FORYOU</title>
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/assignment6.css?v=14">
+  <link rel="stylesheet" href="css/assignment6.css?v=style2">
+  <link rel="stylesheet" href="css/home.css?v=suggestions1">
+  <link rel="stylesheet" href="css/catalog.css?v=button2">
+  <script src="js/auth-store.js?v=auth1" defer></script>
+  <script src="js/navigation.js?v=clothes36" defer></script>
   <!-- Assignment 6 Task 0: required CDN, with the same version locally for offline use. -->
   <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
   <script>if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');</script>
-  <script src="script.js?v=14" defer></script>
+  <script src="script.js?v=home1" defer></script>
   <noscript><style>img[data-src] { display:none }</style></noscript>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="foryou-home fy-catalog d-flex flex-column min-vh-100">
 
 <a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  
-  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
-    <div class="container px-3 px-sm-2 px-lg-4">
-      <a class="navbar-brand wordmark m-0" href="index.html">FORYOU<span class="brand-dot">.</span></a>
-      <button class="navbar-toggler border-dark px-3 py-2" type="button"
-              data-bs-toggle="collapse" data-bs-target="#main-navigation"
-              aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" aria-hidden="true"></span><span class="ms-2 small">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link px-3 py-2" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2 active fw-semibold" href="collection.html" aria-current="page">Collection</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2" href="about.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html">Contact</a></li></ul><div class="nav-tools d-flex flex-wrap align-items-center gap-3 ms-lg-4"><button type="button" class="text-button" id="theme-toggle" aria-pressed="false">Night mode</button><button type="button" class="text-button" id="sound-toggle" aria-pressed="true">Sound on</button><button type="button" class="btn btn-primary nav-subscribe" data-open-popup>Subscribe</button></div>
-      </div>
-    </div>
-  </nav>
-</header>
+<div data-site-navigation></div>
 <main id="main" class="flex-grow-1">
-  <div class="container px-3 px-sm-2 px-lg-4 py-4 py-lg-5">
-    <header class="row g-4 align-items-end mb-4">
-      <div class="col-12 col-lg-6"><h1 class="mb-0">Everyday,<br>considered.</h1></div>
-      <div class="col-12 col-lg-6"><p class="text-secondary mb-3">Fourteen coordinated pieces for your everyday wardrobe.</p>
-        
-        <div class="btn-group" role="group" aria-label="Collection sections"><a class="btn gap-1 btn-primary" href="#clothing">The pieces</a><a class="btn gap-1 btn-outline-primary" href="#size-guide">Size guide</a></div>
-      </div>
+  <div class="fy-container fy-catalog-container">
+    <header class="fy-catalog-intro">
+      <p class="fy-breadcrumb"><a href="index.html?view=style2">Home</a> / Collection</p>
+      <div><h1>Everyday, considered.</h1><a class="fy-text-link" href="#size-guide">Find your fit <span aria-hidden="true">&#8599;</span></a></div>
     </header>
+    <nav class="fy-catalog-categories" aria-label="Shop by clothing category" id="catalog-categories"></nav>
     <section id="clothing" class="py-4" aria-labelledby="clothing-title">
       <h2 id="clothing-title" class="visually-hidden">Our clothing collection</h2>
       <div class="search-panel">
-        <label for="product-search">Find your everyday piece</label>
+        <label for="product-search">Search the collection</label>
         <div class="search-line"><div class="search-input-wrap">
           <input id="product-search" class="form-control" type="search" placeholder="Try linen, hoodie or jeans" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" aria-describedby="search-status" autocomplete="off">
           <ul id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Product suggestions" hidden></ul>
         </div><button id="clear-search" class="text-button" type="button">Clear search</button></div>
-        <p id="search-status" class="small mt-2 mb-0" role="status"></p>
+        <p id="search-status" class="visually-hidden" role="status"></p>
       </div>
       <div class="shop-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
         <div id="price-filters" class="d-flex flex-wrap gap-2" role="group" aria-label="Filter by price" hidden>
@@ -64,124 +48,156 @@
         </div>
         <p id="bag-status" class="fw-semibold mb-0" role="status" hidden>Bag: empty</p>
       </div>
-      <p id="filter-note" class="text-secondary" role="status" aria-live="polite"></p>
+      <p id="filter-note" class="visually-hidden" role="status" aria-live="polite"></p>
       <p id="search-empty" class="search-empty" hidden>No pieces match. Try another word or choose All pieces.</p>
       <div id="product-row" class="row g-4 g-lg-5"><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/shirt.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Everyday shirt</h3>
-        <p class="card-text text-secondary">An easy cotton layer for a relaxed everyday wardrobe.</p>
-        <p class="fw-semibold mb-3">18,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/shirt.png" alt="Everyday shirt in chalk" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Everyday shirt</h3><p class="card-text text-secondary">An easy cotton layer for a relaxed everyday wardrobe.</p><p>18,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/knit.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Easy knit</h3>
-        <p class="card-text text-secondary">Soft texture and a muted green that pairs with your favourites.</p>
-        <p class="fw-semibold mb-3">24,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/knit.png" alt="Easy knit in moss" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Easy knit</h3><p class="card-text text-secondary">Soft texture and a muted green that pairs with your favourites.</p><p>24,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/jacket.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Weekend jacket</h3>
-        <p class="card-text text-secondary">A lightweight finishing layer for slow weekends and busy days.</p>
-        <p class="fw-semibold mb-3">32,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/jacket.png" alt="Weekend jacket in sand" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Weekend jacket</h3><p class="card-text text-secondary">A lightweight finishing layer for slow weekends and busy days.</p><p>32,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/trousers.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Straight trousers</h3>
-        <p class="card-text text-secondary">A relaxed straight-leg shape with a simple, versatile finish.</p>
-        <p class="fw-semibold mb-3">22,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/trousers.png" alt="Straight trousers in charcoal" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Straight trousers</h3><p class="card-text text-secondary">A relaxed straight-leg shape with a simple, versatile finish.</p><p>22,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/essential-tee.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Cream cotton crew-neck T-shirt" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/essential-tee.png" alt="Cream cotton crew-neck T-shirt" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Essential tee</h3>
-        <p class="card-text text-secondary">A substantial cotton tee in cream, made for everyday layering.</p>
-        <p class="fw-semibold mb-3">9,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/essential-tee.png" alt="Cream cotton crew-neck T-shirt" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/essential-tee.png" alt="Cream cotton crew-neck T-shirt" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Essential tee</h3><p class="card-text text-secondary">A substantial cotton tee in cream, made for everyday layering.</p><p>9,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/linen-shirt.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Sand linen button-up shirt with an open collar" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/linen-shirt.png" alt="Sand linen button-up shirt with an open collar" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Breezy linen shirt</h3>
-        <p class="card-text text-secondary">Airy linen in sand with an open collar and an easy, relaxed shape.</p>
-        <p class="fw-semibold mb-3">23,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/linen-shirt.png" alt="Sand linen button-up shirt with an open collar" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/linen-shirt.png" alt="Sand linen button-up shirt with an open collar" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Breezy linen shirt</h3><p class="card-text text-secondary">Airy linen in sand with an open collar and an easy, relaxed shape.</p><p>23,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/ribbed-tank.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Chalk white ribbed cotton tank top" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/ribbed-tank.png" alt="Chalk white ribbed cotton tank top" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Ribbed tank</h3>
-        <p class="card-text text-secondary">Fine cotton ribbing and a clean neckline, worn solo or under a shirt.</p>
-        <p class="fw-semibold mb-3">8,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/ribbed-tank.png" alt="Chalk white ribbed cotton tank top" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/ribbed-tank.png" alt="Chalk white ribbed cotton tank top" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Ribbed tank</h3><p class="card-text text-secondary">Fine cotton ribbing and a clean neckline, worn solo or under a shirt.</p><p>8,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/relaxed-hoodie.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Sage green cotton hoodie with a kangaroo pocket" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/relaxed-hoodie.png" alt="Sage green cotton hoodie with a kangaroo pocket" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Relaxed hoodie</h3>
-        <p class="card-text text-secondary">A roomy sage hoodie with a generous pocket for off-duty days.</p>
-        <p class="fw-semibold mb-3">27,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/relaxed-hoodie.png" alt="Sage green cotton hoodie with a kangaroo pocket" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/relaxed-hoodie.png" alt="Sage green cotton hoodie with a kangaroo pocket" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Relaxed hoodie</h3><p class="card-text text-secondary">A roomy sage hoodie with a generous pocket for off-duty days.</p><p>27,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/cotton-sweatshirt.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Charcoal cotton crew-neck sweatshirt" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/cotton-sweatshirt.png" alt="Charcoal cotton crew-neck sweatshirt" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Cotton sweatshirt</h3>
-        <p class="card-text text-secondary">Brushed cotton in charcoal, finished with soft ribbed cuffs.</p>
-        <p class="fw-semibold mb-3">21,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/cotton-sweatshirt.png" alt="Charcoal cotton crew-neck sweatshirt" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/cotton-sweatshirt.png" alt="Charcoal cotton crew-neck sweatshirt" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Cotton sweatshirt</h3><p class="card-text text-secondary">Brushed cotton in charcoal, finished with soft ribbed cuffs.</p><p>21,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/soft-cardigan.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Oatmeal knit cardigan with a V neckline and buttons" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/soft-cardigan.png" alt="Oatmeal knit cardigan with a V neckline and buttons" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Soft cardigan</h3>
-        <p class="card-text text-secondary">An oatmeal knit with tonal buttons and a little room to layer.</p>
-        <p class="fw-semibold mb-3">29,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/soft-cardigan.png" alt="Oatmeal knit cardigan with a V neckline and buttons" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/soft-cardigan.png" alt="Oatmeal knit cardigan with a V neckline and buttons" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Soft cardigan</h3><p class="card-text text-secondary">An oatmeal knit with tonal buttons and a little room to layer.</p><p>29,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/wide-leg-jeans.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Washed mid-blue wide-leg denim jeans" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/wide-leg-jeans.png" alt="Washed mid-blue wide-leg denim jeans" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Wide-leg jeans</h3>
-        <p class="card-text text-secondary">Washed blue denim with a high waist and a relaxed, wide-leg cut.</p>
-        <p class="fw-semibold mb-3">28,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/wide-leg-jeans.png" alt="Washed mid-blue wide-leg denim jeans" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/wide-leg-jeans.png" alt="Washed mid-blue wide-leg denim jeans" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Wide-leg jeans</h3><p class="card-text text-secondary">Washed blue denim with a high waist and a relaxed, wide-leg cut.</p><p>28,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/linen-shorts.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Sand beige pleated linen shorts" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/linen-shorts.png" alt="Sand beige pleated linen shorts" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Linen shorts</h3>
-        <p class="card-text text-secondary">Light linen shorts in sand, with front pleats and useful side pockets.</p>
-        <p class="fw-semibold mb-3">14,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/linen-shorts.png" alt="Sand beige pleated linen shorts" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/linen-shorts.png" alt="Sand beige pleated linen shorts" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Linen shorts</h3><p class="card-text text-secondary">Light linen shorts in sand, with front pleats and useful side pockets.</p><p>14,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/everyday-overshirt.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Olive cotton twill overshirt with two chest pockets" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/everyday-overshirt.png" alt="Olive cotton twill overshirt with two chest pockets" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">Everyday overshirt</h3>
-        <p class="card-text text-secondary">Olive cotton twill and two patch pockets for an easy extra layer.</p>
-        <p class="fw-semibold mb-3">31,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div>
+      <img class="product-image" data-src="images/everyday-overshirt.png" alt="Olive cotton twill overshirt with two chest pockets" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/everyday-overshirt.png" alt="Olive cotton twill overshirt with two chest pockets" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Everyday overshirt</h3><p class="card-text text-secondary">Olive cotton twill and two patch pockets for an easy extra layer.</p><p>31,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
 <div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
-      <img class="card-img-top rounded-0 product-image" data-src="images/city-coat.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Camel wool coat with notch lapels" width="1254" height="1254" loading="lazy"><noscript><img class="card-img-top rounded-0 product-image" src="images/city-coat.png" alt="Camel wool coat with notch lapels" width="1254" height="1254" loading="lazy"></noscript>
-      <div class="card-body d-flex flex-column px-0 pt-3 pb-0">
-        <h3 class="card-title h4">City coat</h3>
-        <p class="card-text text-secondary">A warm camel coat with clean lapels and a timeless, tailored shape.</p>
-        <p class="fw-semibold mb-3">54,900 KZT</p>
-        <a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="collection.html#size-guide">Find your size <span aria-hidden="true">↗</span></a>
-      </div></article></div></div>
+      <img class="product-image" data-src="images/city-coat.png" alt="Camel wool coat with notch lapels" width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/city-coat.png" alt="Camel wool coat with notch lapels" width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">City coat</h3><p class="card-text text-secondary">A warm camel coat with clean lapels and a timeless, tailored shape.</p><p>54,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/boxy-cotton-tee.png" alt="A black heavyweight cotton T-shirt with a boxy cut and dropped shoulders." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/boxy-cotton-tee.png" alt="A black heavyweight cotton T-shirt with a boxy cut and dropped shoulders." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Boxy cotton tee</h3><p class="card-text text-secondary">A black heavyweight cotton T-shirt with a boxy cut and dropped shoulders.</p><p>11,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/striped-everyday-tee.png" alt="An ivory cotton T-shirt with fine navy horizontal stripes." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/striped-everyday-tee.png" alt="An ivory cotton T-shirt with fine navy horizontal stripes." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Striped everyday tee</h3><p class="card-text text-secondary">An ivory cotton T-shirt with fine navy horizontal stripes.</p><p>13,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/oxford-shirt.png" alt="A sky-blue Oxford cotton button-down shirt with a chest pocket." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/oxford-shirt.png" alt="A sky-blue Oxford cotton button-down shirt with a chest pocket." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Oxford shirt</h3><p class="card-text text-secondary">A sky-blue Oxford cotton button-down shirt with a chest pocket.</p><p>25,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/long-sleeve-tee.png" alt="A slate-gray long-sleeve cotton crew-neck tee." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/long-sleeve-tee.png" alt="A slate-gray long-sleeve cotton crew-neck tee." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Long-sleeve tee</h3><p class="card-text text-secondary">A slate-gray long-sleeve cotton crew-neck tee.</p><p>15,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/linen-blouse.png" alt="An ivory linen blouse with a relaxed collar and softly gathered cuffs." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/linen-blouse.png" alt="An ivory linen blouse with a relaxed collar and softly gathered cuffs." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Linen blouse</h3><p class="card-text text-secondary">An ivory linen blouse with a relaxed collar and softly gathered cuffs.</p><p>24,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/pique-polo.png" alt="A taupe cotton pique polo shirt with a neat three-button placket." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/pique-polo.png" alt="A taupe cotton pique polo shirt with a neat three-button placket." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Pique polo</h3><p class="card-text text-secondary">A taupe cotton pique polo shirt with a neat three-button placket.</p><p>18,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/ribbed-crew-knit.png" alt="A camel ribbed wool-blend crew-neck sweater." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/ribbed-crew-knit.png" alt="A camel ribbed wool-blend crew-neck sweater." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Ribbed crew knit</h3><p class="card-text text-secondary">A camel ribbed wool-blend crew-neck sweater.</p><p>29,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/cable-knit-sweater.png" alt="An ivory cable knit sweater with a classic crew neck." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/cable-knit-sweater.png" alt="An ivory cable knit sweater with a classic crew neck." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Cable knit sweater</h3><p class="card-text text-secondary">An ivory cable knit sweater with a classic crew neck.</p><p>32,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/zip-cardigan.png" alt="A graphite gray fine-knit cardigan with a full zip and stand collar." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/zip-cardigan.png" alt="A graphite gray fine-knit cardigan with a full zip and stand collar." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Zip cardigan</h3><p class="card-text text-secondary">A graphite gray fine-knit cardigan with a full zip and stand collar.</p><p>34,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/fine-knit-pullover.png" alt="A navy fine-gauge knit crew-neck pullover." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/fine-knit-pullover.png" alt="A navy fine-gauge knit crew-neck pullover." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Fine knit pullover</h3><p class="card-text text-secondary">A navy fine-gauge knit crew-neck pullover.</p><p>27,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/layering-knit-vest.png" alt="An oatmeal sleeveless V-neck knit sweater vest worn over a white tee." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/layering-knit-vest.png" alt="An oatmeal sleeveless V-neck knit sweater vest worn over a white tee." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Layering knit vest</h3><p class="card-text text-secondary">An oatmeal sleeveless V-neck knit sweater vest worn over a white tee.</p><p>22,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/tapered-chinos.png" alt="Olive cotton twill tapered chinos." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/tapered-chinos.png" alt="Olive cotton twill tapered chinos." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Tapered chinos</h3><p class="card-text text-secondary">Olive cotton twill tapered chinos.</p><p>25,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/pleated-trousers.png" alt="Black tailored wide-leg trousers with front pleats." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/pleated-trousers.png" alt="Black tailored wide-leg trousers with front pleats." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Pleated trousers</h3><p class="card-text text-secondary">Black tailored wide-leg trousers with front pleats.</p><p>29,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/straight-jeans.png" alt="Dark indigo straight-leg denim jeans with a clean finish." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/straight-jeans.png" alt="Dark indigo straight-leg denim jeans with a clean finish." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Straight jeans</h3><p class="card-text text-secondary">Dark indigo straight-leg denim jeans with a clean finish.</p><p>28,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/jersey-sweatpants.png" alt="Heather-gray cotton jersey sweatpants with elastic cuffs." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/jersey-sweatpants.png" alt="Heather-gray cotton jersey sweatpants with elastic cuffs." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Jersey sweatpants</h3><p class="card-text text-secondary">Heather-gray cotton jersey sweatpants with elastic cuffs.</p><p>21,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/everyday-midi-skirt.png" alt="A charcoal A-line midi skirt with a simple flat waistband." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/everyday-midi-skirt.png" alt="A charcoal A-line midi skirt with a simple flat waistband." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Everyday midi skirt</h3><p class="card-text text-secondary">A charcoal A-line midi skirt with a simple flat waistband.</p><p>24,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/tailored-shorts.png" alt="Stone beige tailored knee-length shorts with front pleats." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/tailored-shorts.png" alt="Stone beige tailored knee-length shorts with front pleats." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Tailored shorts</h3><p class="card-text text-secondary">Stone beige tailored knee-length shorts with front pleats.</p><p>19,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/denim-jacket.png" alt="A washed-blue denim jacket with two chest pockets, over a plain white tee." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/denim-jacket.png" alt="A washed-blue denim jacket with two chest pockets, over a plain white tee." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Denim jacket</h3><p class="card-text text-secondary">A washed-blue denim jacket with two chest pockets, over a plain white tee.</p><p>36,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/lightweight-parka.png" alt="An olive lightweight hooded parka with large patch pockets." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/lightweight-parka.png" alt="An olive lightweight hooded parka with large patch pockets." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Lightweight parka</h3><p class="card-text text-secondary">An olive lightweight hooded parka with large patch pockets.</p><p>42,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/everyday-trench.png" alt="A sand beige belted double-breasted trench coat." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/everyday-trench.png" alt="A sand beige belted double-breasted trench coat." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Everyday trench</h3><p class="card-text text-secondary">A sand beige belted double-breasted trench coat.</p><p>59,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/quilted-vest.png" alt="A black collarless quilted vest over a cream long-sleeve cotton tee." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/quilted-vest.png" alt="A black collarless quilted vest over a cream long-sleeve cotton tee." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Quilted vest</h3><p class="card-text text-secondary">A black collarless quilted vest over a cream long-sleeve cotton tee.</p><p>31,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div>
+<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0">
+      <img class="product-image" data-src="images/cropped-bomber.png" alt="A charcoal cropped bomber jacket with a zip front and ribbed collar." width="1254" height="1254" loading="lazy"><noscript><img class="product-image" src="images/cropped-bomber.png" alt="A charcoal cropped bomber jacket with a zip front and ribbed collar." width="1254" height="1254" loading="lazy"></noscript>
+      <div class="card-body px-0"><h3 class="card-title">Cropped bomber</h3><p class="card-text text-secondary">A charcoal cropped bomber jacket with a zip front and ribbed collar.</p><p>39,900 KZT</p><a class="btn btn-outline-primary" href="#size-guide">Find your size</a></div>
+    </article></div></div>
     </section>
     <section id="size-guide" class="bg-soft p-3 p-md-4 p-lg-5 mt-3 mt-lg-4 mb-3" aria-labelledby="size-title">
       <div class="row g-4 g-lg-5">
-        <div class="col-12 col-lg-6"><h2 id="size-title" class="mb-3">A little guidance.</h2><p>These example body measurements are in centimetres.</p><ol class="ps-4 mb-4"><li class="mb-2">Measure around the fullest part of your chest.</li><li class="mb-2">Measure your waist and the fullest part of your hips.</li><li>Compare the measurements with the table.</li></ol><a class="btn gap-1 btn-secondary btn-sm" href="contact.html#questions">Read sizing questions</a></div>
+        <div class="col-12 col-lg-6"><h2 id="size-title" class="mb-3">A little guidance.</h2><p>Body measurements are in centimetres.</p><ol class="ps-4 mb-4"><li class="mb-2">Measure around the fullest part of your chest.</li><li class="mb-2">Measure your waist and the fullest part of your hips.</li><li>Compare the measurements with the table.</li></ol><a class="btn gap-1 btn-primary btn-sm" href="contact.html?view=style2#questions">Read sizing questions</a></div>
         <div class="col-12 col-lg-6"><div class="table-responsive" tabindex="0" role="region" aria-label="Scrollable clothing size guide">
           <table id="size-table" class="table table-striped align-middle mb-0"><caption class="caption-top pt-0">Unisex body measurements (cm)</caption><thead><tr><th scope="col">Size</th><th scope="col">Chest</th><th scope="col">Waist</th><th scope="col">Hip</th></tr></thead><tbody>
           <tr><th scope="row">S</th><td>86–94</td><td>70–78</td><td>88–96</td></tr>
@@ -195,7 +211,7 @@
       <div class="row g-4 g-lg-5">
         <div class="col-12 col-lg-6">
           <h2 id="finder-title" class="mb-3">Find your size.</h2>
-          <p class="text-secondary">Three quick steps. We compare your measurements with the size guide above. Demo only: nothing is saved.</p>
+          <p class="text-secondary">Three quick steps to compare your measurements with the size guide above.</p>
         </div>
         <div class="col-12 col-lg-6">
           <form id="finder-form" class="join-panel" novalidate>
@@ -228,40 +244,36 @@
     </section>
   </div></main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div><h2>Keep in touch.</h2><p>A small wardrobe. Plenty of possibility.</p></div>
-      <button type="button" class="btn btn-light" data-open-popup>Subscribe</button>
-    </div>
-    <a class="footer-wordmark" href="index.html" aria-label="FORYOU home">FORYOU.</a>
-    <div class="footer-bottom">
-      <p>Asankhan Shyngys &amp; Shangerey Akerke<br><span>Team FORYOU · SE-2504 · Student concept</span></p>
-      <p>Local date &amp; time<br><time data-clock>Available when JavaScript is enabled</time></p>
-      <a href="media-queries.html">Responsive study</a>
-    </div>
+<footer class="site-footer fy-footer">
+  <div class="fy-container">
+    <div class="fy-footer-top"><div><h2>A little more FORYOU.</h2><p>Keep the pieces. Find new ways to wear them.</p></div><button class="fy-button fy-button-light" type="button" data-open-popup>Keep in touch <svg class="fy-icon" aria-hidden="true"><use href="#fy-arrow"/></svg></button></div>
+    <a class="footer-wordmark" href="index.html?view=style2" aria-label="FORYOU home">FORYOU.</a>
+    <div class="fy-footer-bottom"><p>Asankhan Shyngys &amp; Shangerey Akerke</p><nav aria-label="Footer navigation"><a href="profile.html?view=auth1">Your profile</a><a href="contact.html?view=style2#questions">Sizing &amp; help</a><a href="about.html?view=style2">Our story</a></nav><p>Local date &amp; time<br><time data-clock>Available with JavaScript</time></p></div>
   </div>
 </footer>
 <script src="vendor/bootstrap.bundle.min.js"></script>
 
-<dialog id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note">
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title">
   <div class="popup-inner">
     <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
     <h2 id="subscribe-title">A little FORYOU</h2>
     <p>New pieces, styling ideas, and colours to come back to.</p>
-    <p id="subscribe-note" class="small">Student demo: your details stay in this browser. No subscription is created.</p>
+
     <form id="subscribe-form" novalidate>
       <label for="subscriber-email">Email address</label>
       <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
       <p class="field-error" id="subscriber-email-error"></p>
-      <button type="submit" class="btn btn-primary w-100">Try subscribing</button>
+      <button type="submit" class="btn btn-primary w-100">Check email</button>
       <p class="form-status" id="subscribe-status" role="status"></p>
     </form>
   </div>
 </dialog>
-<script src="js/site.js" defer></script>
-<script src="js/common.js" defer></script>
-<script src="js/collection.js?v=14" defer></script>
+<script src="js/site.js?v=style2" defer></script>
+<script src="js/common.js?v=auth1" defer></script>
+<script src="js/products.js?v=clothes36" defer></script>
+<script src="js/cart-store.js?v=style2" defer></script>
+<script src="js/catalog.js?v=style2" defer></script>
+<script src="js/collection.js?v=clothes36" defer></script>
 </body>
 </html>
 

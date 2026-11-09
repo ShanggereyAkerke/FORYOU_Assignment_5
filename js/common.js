@@ -48,7 +48,10 @@
   const soundButton = document.getElementById("sound-toggle");
   function showSoundState() {
     soundButton.setAttribute("aria-pressed", String(sound.enabled));
-    soundButton.textContent = sound.enabled ? "Sound on" : "Sound off";
+    const label = sound.enabled ? "Sound on" : "Sound off";
+    if (!soundButton.querySelector("svg")) soundButton.textContent = label;
+    soundButton.setAttribute("aria-label", label);
+    soundButton.title = label;
   }
   if (soundButton) {
     showSoundState();
@@ -66,11 +69,15 @@
   function setTheme(night) {
     document.documentElement.setAttribute("data-bs-theme", night ? "dark" : "light");
     themeButton.setAttribute("aria-pressed", String(night));
-    themeButton.textContent = night ? "Day mode" : "Night mode";
-    if (paletteButton) {                                              // palette colours are light-only
-      paletteButton.disabled = night;
-      paletteButton.title = night ? "Switch to Day mode to change the background colour" : "";
+    const label = night ? "Day mode" : "Night mode";
+    if (!themeButton.querySelector("svg")) themeButton.textContent = label;
+    themeButton.setAttribute("aria-label", label);
+    themeButton.title = label;
+    if (paletteButton) {
+      paletteButton.disabled = false;
+      paletteButton.title = "Change background";
     }
+    window.dispatchEvent(new Event("foryou:theme"));
   }
   if (themeButton) {
     setTheme(prefs.read().theme === "night");
@@ -94,6 +101,7 @@
       if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
       // Leave text editing, dialogs and other page widgets their own keys.
       const active = document.activeElement;
+      if (active.matches("input, textarea, select") || active.isContentEditable) return;
       const onPage = active === document.body || active === document.documentElement;
       if (!onPage && !menu.contains(active)) return;
       if (document.querySelector("dialog[open]")) return;
@@ -123,5 +131,22 @@
     }
   }
   const greeting = document.getElementById("greeting");
-  if (greeting) greeting.textContent = getGreeting(new Date().getHours()) + " - welcome to FORYOU.";
+  function updateGreeting() {
+    const message = getGreeting(new Date().getHours()) + " - welcome to FORYOU";
+    if (greeting) greeting.textContent = message + ".";
+    const search = document.getElementById("home-search");
+    if (search) {
+      const style = window.getComputedStyle(search);
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      const choices = [message, getGreeting(new Date().getHours()) + " - FORYOU", getGreeting(new Date().getHours()), "Search"];
+      const available = search.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 20;
+      if (context) context.font = style.font;
+      search.placeholder = context ? (choices.find(function (text) { return context.measureText(text).width <= available; }) || "Search") : "Search";
+      search.title = message + ". Search the collection.";
+    }
+  }
+  updateGreeting();
+  window.addEventListener("resize", updateGreeting);
+  if (greeting || document.getElementById("home-search")) window.setInterval(updateGreeting, 60000);
 })();

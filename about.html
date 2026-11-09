@@ -3,59 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FORYOU student clothing-store concept. Everyday essentials, a lookbook and a helpful size guide.">
+  <meta name="description" content="FORYOU everyday clothing. Explore coordinated essentials, outfit inspiration and your size guide.">
   <title>About us | FORYOU</title>
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/assignment6.css?v=14">
+  <link rel="stylesheet" href="css/assignment6.css?v=style2">
+  <link rel="stylesheet" href="css/home.css?v=suggestions1">
+  <link rel="stylesheet" href="css/pages.css?v=style2">
+  <script src="js/auth-store.js?v=auth1" defer></script>
+  <script src="js/navigation.js?v=clothes36" defer></script>
   <!-- Assignment 6 Task 0: required CDN, with the same version locally for offline use. -->
   <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
   <script>if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');</script>
-  <script src="script.js?v=14" defer></script>
+  <script src="script.js?v=home1" defer></script>
   <noscript><style>img[data-src] { display:none }</style></noscript>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body data-page="about" class="foryou-home fy-inner fy-about d-flex flex-column min-vh-100">
 
 <a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  
-  <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
-    <div class="container px-3 px-sm-2 px-lg-4">
-      <a class="navbar-brand wordmark m-0" href="index.html">FORYOU<span class="brand-dot">.</span></a>
-      <button class="navbar-toggler border-dark px-3 py-2" type="button"
-              data-bs-toggle="collapse" data-bs-target="#main-navigation"
-              aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" aria-hidden="true"></span><span class="ms-2 small">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link px-3 py-2" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2" href="collection.html">Collection</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2 active fw-semibold" href="about.html" aria-current="page">About us</a></li>
-            <li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html">Contact</a></li></ul><div class="nav-tools d-flex flex-wrap align-items-center gap-3 ms-lg-4"><button type="button" class="text-button" id="theme-toggle" aria-pressed="false">Night mode</button><button type="button" class="text-button" id="sound-toggle" aria-pressed="true">Sound on</button><button type="button" class="btn btn-primary nav-subscribe" data-open-popup>Subscribe</button></div>
-      </div>
-    </div>
-  </nav>
-</header>
+<div data-site-navigation></div>
 <main id="main" class="flex-grow-1">
-<div class="container px-3 px-sm-2 px-lg-4 py-4 py-lg-5">
-  <section class="row g-4 g-lg-5 align-items-center mb-5" aria-labelledby="story-title">
-    <div class="col-12 col-lg-6"><h1 id="story-title" class="mb-4">Made to go<br>together.</h1><p class="lead text-secondary">A small wardrobe, an easy palette, and a project built together.</p><p>FORYOU is our student clothing-store concept. We explore how clear design and useful information can make a collection easier to discover.</p><a class="btn gap-1 btn-outline-primary mt-2" href="#lookbook">See our lookbook ↓</a></div>
-    <div class="col-12 col-lg-6"><img class="img-fluid w-100 story-image" src="images/banner.jpg" alt="Sunlit interior of the FORYOU clothing-store concept" width="2048" height="2048"></div>
+<div class="fy-container fy-page-content">
+  <section class="row g-4 g-lg-5 align-items-center mb-5 fy-about-hero" aria-labelledby="story-title">
+    <div class="col-12 col-lg-6"><p class="fy-page-path"><a href="index.html?view=style2">Home</a> / About</p><h1 id="story-title" class="mb-4">Made to go<br>together.</h1><p class="lead text-secondary">Less to choose from.<br>More ways to make it yours.</p><p>FORYOU brings everyday pieces together through an easy palette, comfortable layers and clear, considered design.</p><a class="btn gap-1 btn-outline-primary mt-2" href="#lookbook">See our lookbook ↓</a></div>
+    <div class="col-12 col-lg-6"><img class="img-fluid w-100 story-image" src="images/banner.jpg" alt="Sunlit FORYOU clothing interior" width="2048" height="2048"></div>
   </section>
   <section aria-labelledby="facts-title">
     <h2 id="facts-title">Small by design.</h2>
     <div class="collection-facts">
-      <p><strong data-count="14">14</strong><span>everyday pieces</span></p>
+      <p><strong data-count="36">36</strong><span>everyday pieces</span></p>
       <p><strong data-count="9">9</strong><span>lookbook images</span></p>
       <p><strong data-count="2">2</strong><span>team members</span></p>
     </div>
   </section>
-  <section class="py-4 py-lg-5" aria-labelledby="team-title">
-    <div class="row g-4"><div class="col-12 col-lg-4"><h2 id="team-title">Our team</h2><p class="text-secondary">Group SE-2504</p></div>
-    <div class="col-12 col-md-6 col-lg-4"><article class="card border-0 bg-soft h-100"><div class="card-body p-4"><h3 class="h4">Asankhan Shyngys</h3><p class="mb-0">Home page, collection, product cards, responsive layouts and size guide.</p></div></article></div>
-    <div class="col-12 col-md-6 col-lg-4"><article class="card border-0 bg-soft h-100"><div class="card-body p-4"><h3 class="h4">Shangerey Akerke</h3><p class="mb-0">Our story, team information, nine-image lookbook and responsive enquiry form.</p></div></article></div></div>
+  <section class="py-4 py-lg-5 fy-team" aria-labelledby="team-title">
+    <div class="row g-4"><div class="col-12 col-lg-4"><h2 id="team-title">Our team</h2></div>
+    <div class="col-12 col-md-6 col-lg-4"><article class="card border-0 h-100 fy-team-member"><div class="card-body p-4"><h3 class="h4">Asankhan Shyngys</h3><p class="mb-0">Collection, everyday styling and visual direction.</p></div></article></div>
+    <div class="col-12 col-md-6 col-lg-4"><article class="card border-0 h-100 fy-team-member"><div class="card-body p-4"><h3 class="h4">Shangerey Akerke</h3><p class="mb-0">Brand story, lookbook and customer experience.</p></div></article></div></div>
   </section>
-  <section id="lookbook" class="py-4 py-lg-5" aria-labelledby="lookbook-title">
+  <section id="lookbook" class="py-4 py-lg-5 fy-lookbook" aria-labelledby="lookbook-title">
     <div class="row g-4"><div class="col-12 col-lg-4"><h2 id="lookbook-title">The lookbook</h2><p class="text-secondary">The pieces, textures and spaces behind our collection.</p></div><div class="col-12 col-lg-8">
 <p id="lookbook-help" class="small text-secondary mb-3">Use the slide indicators or Previous and Next to explore all nine images.</p>
 <div id="lookbook-carousel" class="carousel slide" data-bs-interval="false"
@@ -77,8 +63,8 @@
 <figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/jacket.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Model wearing a sand-coloured jacket" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/jacket.png" alt="Model wearing a sand-coloured jacket" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Weekend jacket</figcaption></figure>
 <figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/trousers.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Charcoal straight-leg trousers" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/trousers.png" alt="Charcoal straight-leg trousers" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Straight trousers</figcaption></figure>
 <figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/studio.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Two models in coordinated neutral outfits" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/studio.png" alt="Two models in coordinated neutral outfits" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Everyday outfits</figcaption></figure>
-<figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/banner.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Bright clothing-store interior" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/banner.jpg" alt="Bright clothing-store interior" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Our store concept</figcaption></figure>
-<figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/contactus.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Clothing displays in the FORYOU store concept" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/contactus.jpg" alt="Clothing displays in the FORYOU store concept" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Inside FORYOU</figcaption></figure>
+<figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/banner.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Bright clothing-store interior" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/banner.jpg" alt="Bright clothing-store interior" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Our space</figcaption></figure>
+<figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/contactus.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Clothing displays in FORYOU" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/contactus.jpg" alt="Clothing displays in FORYOU" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Inside FORYOU</figcaption></figure>
 <figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/gallery-cotton.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Ivory cotton shirt draped over a wooden chair" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/gallery-cotton.png" alt="Ivory cotton shirt draped over a wooden chair" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Everyday cotton</figcaption></figure>
 <figure class="carousel-item mb-0"><img class="d-block w-100 lookbook-image" data-src="images/gallery-knitwear.png" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Oatmeal, olive and charcoal knitwear folded on a shelf" width="1254" height="1254" loading="lazy"><noscript><img class="d-block w-100 lookbook-image" src="images/gallery-knitwear.png" alt="Oatmeal, olive and charcoal knitwear folded on a shelf" width="1254" height="1254" loading="lazy"></noscript><figcaption class="bg-dark text-white p-3 p-md-4">Layers in neutral tones</figcaption></figure>
   </div>
@@ -90,39 +76,34 @@
   </section>
 </div></main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div><h2>Keep in touch.</h2><p>A small wardrobe. Plenty of possibility.</p></div>
-      <button type="button" class="btn btn-light" data-open-popup>Subscribe</button>
-    </div>
-    <a class="footer-wordmark" href="index.html" aria-label="FORYOU home">FORYOU.</a>
-    <div class="footer-bottom">
-      <p>Asankhan Shyngys &amp; Shangerey Akerke<br><span>Team FORYOU · SE-2504 · Student concept</span></p>
-      <p>Local date &amp; time<br><time data-clock>Available when JavaScript is enabled</time></p>
-      <a href="media-queries.html">Responsive study</a>
-    </div>
+<footer class="site-footer fy-footer">
+  <div class="fy-container">
+    <div class="fy-footer-top"><div><h2>A little more FORYOU.</h2><p>Keep the pieces. Find new ways to wear them.</p></div><button class="fy-button fy-button-light" type="button" data-open-popup>Keep in touch <svg class="fy-icon" aria-hidden="true"><use href="#fy-arrow"/></svg></button></div>
+    <a class="footer-wordmark" href="index.html?view=style2" aria-label="FORYOU home">FORYOU.</a>
+    <div class="fy-footer-bottom"><p>Asankhan Shyngys &amp; Shangerey Akerke</p><nav aria-label="Footer navigation"><a href="profile.html?view=auth1">Your profile</a><a href="contact.html?view=style2#questions">Sizing &amp; help</a><a href="about.html?view=style2">Our story</a></nav><p>Local date &amp; time<br><time data-clock>Available with JavaScript</time></p></div>
   </div>
 </footer>
 <script src="vendor/bootstrap.bundle.min.js"></script>
 
-<dialog id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note">
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title">
   <div class="popup-inner">
     <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
     <h2 id="subscribe-title">A little FORYOU</h2>
     <p>New pieces, styling ideas, and colours to come back to.</p>
-    <p id="subscribe-note" class="small">Student demo: your details stay in this browser. No subscription is created.</p>
+
     <form id="subscribe-form" novalidate>
       <label for="subscriber-email">Email address</label>
       <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
       <p class="field-error" id="subscriber-email-error"></p>
-      <button type="submit" class="btn btn-primary w-100">Try subscribing</button>
+      <button type="submit" class="btn btn-primary w-100">Check email</button>
       <p class="form-status" id="subscribe-status" role="status"></p>
     </form>
   </div>
 </dialog>
-<script src="js/site.js" defer></script>
-<script src="js/common.js" defer></script>
+<script src="js/site.js?v=style2" defer></script>
+<script src="js/common.js?v=auth1" defer></script>
+<script src="js/products.js?v=clothes36" defer></script>
+<script src="js/cart-store.js?v=style2" defer></script>
 </body>
 </html>
 

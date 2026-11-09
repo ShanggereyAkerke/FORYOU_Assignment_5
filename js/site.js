@@ -58,8 +58,6 @@ if (joinForm) {
     message = "Your passwords do not match.";
   }
 }
-    if (input.id === "understood" && !input.checked)
-      message = "Please confirm that this is a demonstration.";
     return showError(input, message);
   }
   joinForm.addEventListener("submit", (event) => {
@@ -74,7 +72,7 @@ if (joinForm) {
     }
     const complete = () => {
       joinForm.reset();
-      status.textContent = "All checks passed. Demo complete — no account was created or details saved.";
+      status.textContent = "Your details have been checked.";
       status.classList.add("success");
     };
     if (window.ForYouUX) window.ForYouUX.submit(joinForm, complete);
@@ -139,7 +137,7 @@ if (dialog) {
     if (!showError(email, emailError(email))) { email.focus(); return; }
     const complete = () => {
       form.reset();
-      status.textContent = "Email validated. Demo complete — no subscription was created.";
+      status.textContent = "Your email format is valid.";
       status.classList.add("success");
     };
     if (window.ForYouUX) window.ForYouUX.submit(form, complete);
@@ -158,20 +156,33 @@ if (dialog) {
   });
 }
 
-// Task 4: cycle through three light colours from the collection's palette.
+// Task 4: independent background palettes for light and dark themes.
 const colourButton = document.getElementById("change-colour");
 if (colourButton) {
-  const palette = [
-    { name: "Chalk", value: "#fbf6ee" },
-    { name: "Moss", value: "#e6ebdf" },
-    { name: "Rose", value: "#f0e2e5" }
-  ];
-  let selected = 0;
-  colourButton.addEventListener("click", () => {
-    selected = (selected + 1) % palette.length;
-    document.body.style.backgroundColor = palette[selected].value;
-    document.getElementById("colour-name").textContent = palette[selected].name;
+  const palettes = {
+    light: [{ name: "White", value: "#ffffff" }, { name: "Mist", value: "#f3f3f3" }, { name: "Silver", value: "#e7e7e7" }],
+    dark: [{ name: "Charcoal", value: "#171717" }, { name: "Graphite", value: "#242424" }, { name: "Midnight", value: "#101820" }]
+  };
+  const selected = { light: 0, dark: 0 };
+  try {
+    const saved = JSON.parse(localStorage.getItem("foryou-backgrounds") || "{}");
+    ["light", "dark"].forEach(function (mode) { if (Number.isInteger(saved[mode]) && saved[mode] >= 0 && saved[mode] < 3) selected[mode] = saved[mode]; });
+  } catch (_) { /* Defaults work when storage is unavailable. */ }
+  function applyBackground() {
+    const mode = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "dark" : "light";
+    const color = palettes[mode][selected[mode]];
+    document.body.style.setProperty(mode === "dark" ? "--fy-selected-dark" : "--fy-selected-paper", color.value);
+    document.getElementById("colour-name").textContent = color.name;
+    colourButton.title = "Change background (" + color.name + ")";
+  }
+  colourButton.addEventListener("click", function () {
+    const mode = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "dark" : "light";
+    selected[mode] = (selected[mode] + 1) % palettes[mode].length;
+    try { localStorage.setItem("foryou-backgrounds", JSON.stringify(selected)); } catch (_) { /* Selection remains usable. */ }
+    applyBackground();
   });
+  window.addEventListener("foryou:theme", applyBackground);
+  applyBackground();
 }
 
 // Task 5: use the visitor's local Date, and update once every second.

@@ -5,106 +5,7 @@
   const sound = window.ForYou ? window.ForYou.sound : { play() {} };
 
   /* ================= 1. DATA: an array of objects with methods ================= */
-  const products = [
-  {
-    "name": "Everyday shirt",
-    "price": 18900,
-    "image": "shirt.png",
-    "alt": "Everyday shirt in chalk",
-    "text": "An easy cotton layer for a relaxed everyday wardrobe."
-  },
-  {
-    "name": "Easy knit",
-    "price": 24900,
-    "image": "knit.png",
-    "alt": "Easy knit in moss",
-    "text": "Soft texture and a muted green that pairs with your favourites."
-  },
-  {
-    "name": "Weekend jacket",
-    "price": 32900,
-    "image": "jacket.png",
-    "alt": "Weekend jacket in sand",
-    "text": "A lightweight finishing layer for slow weekends and busy days."
-  },
-  {
-    "name": "Straight trousers",
-    "price": 22900,
-    "image": "trousers.png",
-    "alt": "Straight trousers in charcoal",
-    "text": "A relaxed straight-leg shape with a simple, versatile finish."
-  },
-  {
-    "name": "Essential tee",
-    "price": 9900,
-    "image": "essential-tee.png",
-    "alt": "Cream cotton crew-neck T-shirt",
-    "text": "A substantial cotton tee in cream, made for everyday layering."
-  },
-  {
-    "name": "Breezy linen shirt",
-    "price": 23900,
-    "image": "linen-shirt.png",
-    "alt": "Sand linen button-up shirt with an open collar",
-    "text": "Airy linen in sand with an open collar and an easy, relaxed shape."
-  },
-  {
-    "name": "Ribbed tank",
-    "price": 8900,
-    "image": "ribbed-tank.png",
-    "alt": "Chalk white ribbed cotton tank top",
-    "text": "Fine cotton ribbing and a clean neckline, worn solo or under a shirt."
-  },
-  {
-    "name": "Relaxed hoodie",
-    "price": 27900,
-    "image": "relaxed-hoodie.png",
-    "alt": "Sage green cotton hoodie with a kangaroo pocket",
-    "text": "A roomy sage hoodie with a generous pocket for off-duty days."
-  },
-  {
-    "name": "Cotton sweatshirt",
-    "price": 21900,
-    "image": "cotton-sweatshirt.png",
-    "alt": "Charcoal cotton crew-neck sweatshirt",
-    "text": "Brushed cotton in charcoal, finished with soft ribbed cuffs."
-  },
-  {
-    "name": "Soft cardigan",
-    "price": 29900,
-    "image": "soft-cardigan.png",
-    "alt": "Oatmeal knit cardigan with a V neckline and buttons",
-    "text": "An oatmeal knit with tonal buttons and a little room to layer."
-  },
-  {
-    "name": "Wide-leg jeans",
-    "price": 28900,
-    "image": "wide-leg-jeans.png",
-    "alt": "Washed mid-blue wide-leg denim jeans",
-    "text": "Washed blue denim with a high waist and a relaxed, wide-leg cut."
-  },
-  {
-    "name": "Linen shorts",
-    "price": 14900,
-    "image": "linen-shorts.png",
-    "alt": "Sand beige pleated linen shorts",
-    "text": "Light linen shorts in sand, with front pleats and useful side pockets."
-  },
-  {
-    "name": "Everyday overshirt",
-    "price": 31900,
-    "image": "everyday-overshirt.png",
-    "alt": "Olive cotton twill overshirt with two chest pockets",
-    "text": "Olive cotton twill and two patch pockets for an easy extra layer."
-  },
-  {
-    "name": "City coat",
-    "price": 54900,
-    "image": "city-coat.png",
-    "alt": "Camel wool coat with notch lapels",
-    "text": "A warm camel coat with clean lapels and a timeless, tailored shape."
-  }
-].map((item, index) => Object.assign(item, {
+  const products = window.ForYouProducts.map((item, index) => Object.assign({}, item, {
     id: index,
     rating: 0,
     priceLabel() { return this.price.toLocaleString("en-US") + " KZT"; },   // object method
@@ -117,7 +18,8 @@
   const bagStatus = document.getElementById("bag-status");
   if (!row || !filterBar) return;
 
-  let bag = [];                      // ids of products added to the bag
+  const cart = window.ForYouCart;
+
   filterBar.hidden = false;          // controls appear only when JavaScript works
   bagStatus.hidden = false;
 
@@ -151,17 +53,17 @@
   }
 
   function cardHTML(product) {
-    return '<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0" data-id="' + product.id + '">' +
+    return '<div class="col-12 col-sm-6 col-lg-3"><article class="card h-100 product-card border-0 rounded-0" data-category="' + product.category + '" data-id="' + product.id + '">' +
       '<img class="card-img-top rounded-0 product-image" data-src="images/' + product.image + '" alt="' + product.alt + '" width="1254" height="1254" loading="lazy">' +
       '<div class="card-body d-flex flex-column px-0 pt-3 pb-0">' +
       '<h3 class="card-title h4">' + product.name + '</h3>' +
-      '<p class="card-text text-secondary">' + product.text + '</p>' +
+      '<p class="product-color">' + product.color + '</p>' +
       '<p class="fw-semibold mb-2">' + product.priceLabel() + '</p>' +
-      '<div class="rating" role="group" aria-label="Rating for ' + product.name + '">' + starsHTML(product) + '</div>' +
+      '<details class="product-details"><summary>Details &amp; rating</summary><p class="card-text text-secondary">' + product.text + '</p><div class="rating" role="group" aria-label="Rating for ' + product.name + '">' + starsHTML(product) + '</div>' +
       '<p class="rating-text small text-secondary" aria-live="polite"></p>' +
-      '<div class="d-flex flex-wrap gap-2 mt-auto">' +
+      '</details><div class="product-actions">' +
       '<button type="button" class="btn btn-primary btn-sm" data-add>Add to bag</button>' +
-      '<a class="btn gap-1 btn-outline-primary btn-sm" href="collection.html#size-finder">Find your size <span aria-hidden="true">↗</span></a>' +
+      '<a class="product-size-link" href="collection.html?view=style2#size-finder">Find your size <span aria-hidden="true">↗</span></a>' +
       '</div></div></article></div>';
   }
 
@@ -213,10 +115,9 @@
 
   /* ================= 4. Stars and bag (event delegation) ================= */
   function updateBag() {
-    const total = bag.reduce((sum, id) => sum + products[id].price, 0);           // reduce
-    bagStatus.textContent = bag.length
-      ? "Bag: " + bag.length + (bag.length === 1 ? " item" : " items") + " · " + total.toLocaleString("en-US") + " KZT"
-      : "Bag: empty";
+    const total = cart.total();
+    const count = cart.count();
+    bagStatus.textContent = count ? "Bag: " + count + (count === 1 ? " item" : " items") + " - " + total.toLocaleString("en-US") + " KZT" : "Bag: empty";
     bagStatus.classList.remove("pop");
     void bagStatus.offsetWidth;                  // re-read layout so the animation can restart
     bagStatus.classList.add("pop");
@@ -233,12 +134,15 @@
       sound.play(480 + product.rating * 60);
     }
     if (event.target.closest("[data-add]")) {
-      bag.push(product.id);
+      cart.add(product.id);
       updateBag();
       if (window.jQuery) window.jQuery(document).trigger("foryou:bag", [product.name]);
       sound.play(660, 0.18);
     }
   });
+
+  updateBag();
+  window.addEventListener("foryou:cart", updateBag);
 
   /* ================= 5. Multi-step size finder with a callback ================= */
   const table = document.getElementById("size-table");

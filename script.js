@@ -157,7 +157,7 @@ $(document).ready(function () {
     let count = 0;
     $("#product-row .product-card").each(function () {
       const $card = $(this);
-      const text = $card.find(".card-title, .card-text").text() + " " + ($card.find("img").attr("alt") || "");
+      const text = $card.find(".card-title, .card-text").text() + " " + ($card.find("img").attr("alt") || "") + " " + ($card.attr("data-category") || "");
       const matches = text.toLocaleLowerCase().includes(query);
       $card.parent().prop("hidden", !matches);
       if (matches) count++;
@@ -199,7 +199,11 @@ $(document).ready(function () {
   $search.on("blur", closeSuggestions);
   $("#clear-search").on("click", function () { $search.val(""); filterProducts(false); $search.trigger("focus"); });
   $(document).on("foryou:products", function () { filterProducts(false); });
-  if ($search.length) filterProducts(false);
+  if ($search.length) {
+    const initialSearch = new URLSearchParams(window.location.search).get("q");
+    if (initialSearch) $search.val(initialSearch.slice(0, 100));
+    filterProducts(false);
+  }
 
   // FAQ keyword search highlights every occurrence, including words in answers.
   $("#faq-search").on("input", function () {

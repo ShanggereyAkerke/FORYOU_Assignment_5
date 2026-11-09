@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FORYOU everyday clothing. Explore coordinated essentials, outfit inspiration and your size guide.">
+  <title>Your profile | FORYOU</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/assignment6.css?v=no-progress1">
+  <link rel="stylesheet" href="css/home.css?v=sections1">
+  <link rel="stylesheet" href="css/pages.css?v=style2">
+  <link rel="stylesheet" href="css/profile.css?v=api1">
+  <link rel="stylesheet" href="css/auth.css?v=auth1">
+  <script src="js/auth-store.js?v=auth1" defer></script>
+  <script src="js/navigation.js?v=sections1" defer></script>
+  <!-- Assignment 6 Task 0: required CDN, with the same version locally for offline use. -->
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+  <script>if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');</script>
+  <script src="script.js?v=sections2" defer></script>
+  <noscript><style>img[data-src] { display:none }</style></noscript>
+</head>
+<body data-page="profile" class="foryou-home fy-inner fy-profile-page d-flex flex-column min-vh-100">
+
+<a class="visually-hidden-focusable position-absolute bg-white text-dark p-3 skip-link" href="#main">Skip to content</a>
+<div data-site-navigation></div>
+<main id="main" class="fy-container fy-profile-main">
+  <p class="fy-page-path"><a href="index.html?view=style2">Home</a> / Profile</p>
+  <header class="fy-profile-heading"><h1>A little more you.</h1><p>Your preferences, in one place.</p></header>
+  <section class="fy-profile-details" aria-labelledby="profile-details-title"><h2 id="profile-details-title">Your details</h2><dl><div><dt>Name</dt><dd id="profile-name"></dd></div><div><dt>Email</dt><dd id="profile-email"></dd></div><div><dt>Phone</dt><dd id="profile-phone"></dd></div></dl><button id="logout" class="text-button" type="button">Log out</button></section>
+  <div class="fy-profile-layout">
+    <section class="fy-profile-image"><img src="images/gallery-cotton.png" width="1536" height="1024" alt="A chalk cotton shirt draped over a wooden chair"></section>
+    <section class="fy-profile-settings" aria-labelledby="country-title">
+      <h2 id="country-title">Your country</h2><p>Choose a country to keep with your profile preferences.</p>
+      <form id="country-form" novalidate>
+        <label for="profile-country">Country</label>
+        <div id="country-loader" class="fy-country-loading"><span class="submit-spinner" aria-hidden="true"></span> Loading countries...</div>
+        <select id="profile-country" aria-describedby="country-error" disabled><option value="">Choose your country</option></select>
+        <p id="country-error" class="field-error" role="alert"></p>
+        <button id="country-retry" type="button" class="text-button" hidden>Try again</button>
+        <button id="save-country" type="submit" class="fy-button" disabled>Save country</button>
+        <p id="country-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </div>
+  <noscript><p>Enable JavaScript to load the country list and save your selection.</p></noscript>
+</main>
+
+<footer class="site-footer fy-footer">
+  <div class="fy-container">
+    <div class="fy-footer-top"><div><h2>A little more FORYOU.</h2><p>Keep the pieces. Find new ways to wear them.</p></div><button class="fy-button fy-button-light" type="button" data-open-popup>Keep in touch <svg class="fy-icon" aria-hidden="true"><use href="#fy-arrow"/></svg></button></div>
+    <a class="footer-wordmark" href="index.html?view=style2" aria-label="FORYOU home">FORYOU.</a>
+    <div class="fy-footer-bottom"><p>Asankhan Shyngys &amp; Shangerey Akerke</p><nav aria-label="Footer navigation"><a href="profile.html?view=auth1">Your profile</a><a href="contact.html?view=style2#questions">Sizing &amp; help</a><a href="about.html?view=style2">Our story</a></nav><p>Local date &amp; time<br><time data-clock>Available with JavaScript</time></p></div>
+  </div>
+</footer>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+
+<dialog id="subscribe-dialog" aria-labelledby="subscribe-title">
+  <div class="popup-inner">
+    <button type="button" class="close-popup" data-close-popup aria-label="Close subscription form">×</button>
+    <h2 id="subscribe-title">A little FORYOU</h2>
+    <p>New pieces, styling ideas, and colours to come back to.</p>
+
+    <form id="subscribe-form" novalidate>
+      <label for="subscriber-email">Email address</label>
+      <input class="form-control" id="subscriber-email" name="email" type="email" autocomplete="email" required aria-describedby="subscriber-email-error">
+      <p class="field-error" id="subscriber-email-error"></p>
+      <button type="submit" class="btn btn-primary w-100">Check email</button>
+      <p class="form-status" id="subscribe-status" role="status"></p>
+    </form>
+  </div>
+</dialog>
+<script src="js/site.js?v=style2" defer></script>
+<script src="js/common.js?v=auth1" defer></script>
+<script src="js/products.js?v=clothes36" defer></script>
+<script src="js/cart-store.js?v=style2" defer></script>
+<script src="js/profile.js?v=auth1" defer></script>
+</body>
+</html>
+
+
+

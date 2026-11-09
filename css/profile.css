@@ -1,0 +1,21 @@
+.fy-profile-main { padding-block:40px 80px }
+.fy-profile-heading { margin-bottom:40px }
+.fy-profile-heading h1 { margin:0 0 20px }
+.fy-profile-heading p { color:var(--muted); font-size:18px }
+.fy-profile-layout { display:grid; gap:32px }
+.fy-profile-image img { display:block; width:100%; height:300px; object-fit:cover }
+.fy-profile-settings { padding:28px; background:var(--soft); align-self:center }
+.fy-profile-settings h2 { margin-bottom:20px }
+.fy-profile-settings > p { color:var(--muted); margin-bottom:24px }
+.fy-profile-settings label { display:block; font-size:14px; margin-bottom:8px }
+.fy-profile-settings select { width:100%; min-height:48px; padding:12px; border:1px solid #909090; border-radius:8px; background:var(--paper); color:var(--ink); font:inherit }
+.fy-profile-settings .fy-button { margin-top:16px }
+.fy-profile-settings button:disabled { opacity:.45; cursor:wait }
+.fy-country-loading { display:flex; align-items:center; gap:12px; margin-block:16px; font-size:14px }
+.fy-country-loading[hidden] { display:none }
+#country-status { margin:20px 0 0; min-height:24px; font-size:14px }
+@media(min-width:960px) {
+  .fy-profile-layout { grid-template-columns:1fr 1fr; gap:64px }
+  .fy-profile-image img { height:560px }
+  .fy-profile-settings { padding:40px }
+}

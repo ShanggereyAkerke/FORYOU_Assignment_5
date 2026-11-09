@@ -1,0 +1,56 @@
+.fy-bag-main { padding-block:40px 80px }
+.fy-bag-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px }
+.fy-bag-heading h1 { margin:0 }
+.fy-bag-heading p { color:var(--muted); margin:0 }
+.fy-bag-layout { display:grid; grid-template-columns:1fr; gap:40px }
+.fy-bag-item { display:grid; grid-template-columns:90px minmax(0,1fr); gap:16px; padding:24px 0; border-top:1px solid #b0b0b0 }
+.fy-bag-item img { width:90px; height:120px; object-fit:cover }
+.foryou-home .fy-bag-item h2 { font:400 20px/1.3 Arial,sans-serif; letter-spacing:0; margin:0 0 8px }
+.fy-bag-item h2 a { text-decoration:none }
+.fy-bag-item h2 a:hover { text-decoration:underline }
+.fy-bag-item-info > p { font-size:14px; margin:8px 0 }
+.fy-bag-color { color:var(--muted) }
+.fy-bag-quantity { display:flex; flex-wrap:wrap; align-items:center; gap:8px 2px; margin-top:12px }
+.fy-quantity-stepper { display:inline-flex; align-items:center; border:1px solid #909090; border-radius:24px; overflow:hidden }
+.fy-quantity-stepper button { border:0; width:44px; height:44px; background:transparent; color:var(--ink); font:400 20px Arial,sans-serif }
+.fy-quantity-stepper button:hover { background:var(--soft) }
+.fy-quantity-stepper button:disabled { opacity:.35; cursor:default }
+.fy-quantity-stepper button:focus-visible { outline-offset:-4px }
+.fy-quantity-stepper output { min-width:28px; text-align:center; font-size:16px }
+.fy-bag-remove { display:inline-flex; justify-content:center; align-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; background:transparent; color:var(--ink); font:400 28px/1 Arial,sans-serif; cursor:pointer }
+.fy-bag-remove:hover { background:var(--soft) }
+.fy-bag-line-total { grid-column:2; grid-row:1; align-self:start; justify-self:end; text-align:right; font-size:22px; line-height:1.2; margin:0; font-weight:600 }
+.fy-bag-item-info { grid-column:2; grid-row:1 }
+.fy-bag-item-info h2 { padding-right:150px }
+.fy-bag-summary { padding:28px; background:var(--soft); align-self:start; margin-top:8px }
+.fy-bag-summary > header { display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding-bottom:24px; border-bottom:1px solid #d0d0d0 }
+.foryou-home .fy-bag-summary h2 { font:600 24px/1.3 Arial,sans-serif; letter-spacing:0; margin:0 }
+.fy-bag-summary > header strong { font-size:20px; white-space:nowrap }
+.fy-bag-summary dl { margin:20px 0 0 }
+.fy-bag-summary dl > div { display:flex; justify-content:space-between; gap:20px; padding:12px 0; font-size:18px }
+.fy-bag-summary dt { font-weight:400 }
+.fy-bag-summary dd { margin:0; text-align:right; white-space:nowrap }
+.fy-bag-summary abbr { text-decoration:none; cursor:help }
+.fy-bag-summary dl > .fy-order-total { border-top:1px solid #d0d0d0; margin-top:20px; padding-block:24px; font-size:24px }
+.fy-order-total dt,.fy-order-total dd { font-weight:600 }
+.fy-bag-summary > p { color:var(--muted); font-size:14px; margin-bottom:24px }
+.fy-bag-summary .fy-button { width:100% }
+.fy-bag-empty { padding:48px 0; max-width:42ch }
+.fy-bag-empty p { color:var(--muted); margin:20px 0 28px }
+#bag-feedback { min-height:24px; font-size:14px; color:var(--muted) }
+@media(min-width:960px) {
+  .fy-bag-main { max-width:1056px }
+  .fy-bag-layout { grid-template-columns:1fr; gap:40px }
+  .fy-bag-summary { padding:40px }
+  .fy-bag-item { grid-template-columns:150px 1fr auto; gap:24px }
+  .fy-bag-item img { width:150px; height:180px }
+  .fy-bag-line-total { grid-column:3; font-size:26px }
+  .fy-bag-item-info h2 { padding-right:0 }
+}
+@media(max-width:599px) {
+  .fy-bag-item-info h2 { padding-right:0 }
+  .fy-bag-item-info { padding-top:0 }
+  .fy-bag-line-total { grid-column:2; grid-row:2; justify-self:end; text-align:right; margin-top:-4px }
+  .fy-bag-item { row-gap:8px }
+}
+

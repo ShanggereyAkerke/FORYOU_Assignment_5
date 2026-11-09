@@ -32,6 +32,10 @@
 .fy-about .carousel-inner { background:var(--soft) }
 .fy-about .carousel-item figcaption { background:var(--soft)!important; color:var(--ink)!important; padding:16px 20px!important; font-size:14px }
 .fy-about .carousel-indicators button { background-color:var(--ink); min-height:4px }
+.fy-about #lookbook-carousel { width:100%; max-width:640px; margin-inline:auto }
+.fy-about #lookbook-carousel .carousel-inner { background:transparent }
+.fy-about #lookbook-carousel .lookbook-image { width:100%; height:auto; max-height:none; object-fit:contain }
+.fy-lookbook-controls { display:flex; justify-content:center; align-items:center; gap:12px; margin-top:16px }
 .fy-contact .contact-main { padding-block:32px 64px }
 .fy-contact .page-intro { margin-bottom:32px; animation:none }
 .fy-contact .page-intro h1 { margin-bottom:20px }
